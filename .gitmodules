@@ -1,0 +1,3 @@
+[submodule "Raidcore"]
+	path = Raidcore
+	url = http://github.com/NielsH/Raidcore

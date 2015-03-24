@@ -1,0 +1,280 @@
+#!/usr/bin/ruby
+
+require 'nokogiri'
+require 'open-uri'
+require 'optparse'
+require 'logger'
+require 'json'
+require 'uri'
+require 'pp'
+
+USAGE="usage: #{$0} <convert|dump> [opts] <file1> <file2> ... <fileN>"
+
+R_STR=/"[^"]+"/
+R_COND=/\s+\w+\s+==\s+(#{R_STR.source})\s+/
+R_RAIDCORE=%r{(?:
+  ^\s*(?:else)?if#{R_COND.source}(?:(?:and|or)#{R_COND.source})?then\s*
+  |^\s*(?:else)?if\s*[a-zA-Z]+(?:\(\))?:find\(\s*(#{R_STR.source})\s*\)
+  |^[a-z]+:Register[a-zA-Z]+Objective\(.*\)
+  |^[a-z]+:RegisterEnableMob\(
+      ((?:\s*#{R_STR.source}\s*,\s*)*)
+      \s*(#{R_STR.source})\s*
+    \)
+  |^[a-z]+:Register[a-zA-Z]+\(
+      \s*"[^"]+"\s*,
+      ((?:\s*#{R_STR.source}\s*,\s*)*)
+      \s*(#{R_STR.source})\s*
+    \)
+)}x
+
+API_SITE='http://wildstar.datminer.com'
+API_SEARCH_URL=File.join(API_SITE,'/search/::QUERY::')
+API_SEARCH_QUERY=File.join(API_SITE,'/modules/core_search/results_ajax.php'\
+  '?filter%5Bstring%5D=::QUERY::&url_language=1')
+XPATH_SEARCH_RESULTS="//div[contains(@class,'search-result-title')]/a[@href]"
+XPATH_RESULT_NAME="//div[contains(@class,'entity-page-header')]//"\
+  "span[contains(@class,'name')]"
+
+#API_SITE='http://www.jabbithole.com'
+#API_SEARCH_QUERY=File.join(API_SITE,'/search?q=::QUERY::')
+#XPATH_SEARCH_RESULTS="//table[contains(@class,'datalist')]/tbody/tr/td/a[@href]"
+
+$logger = Logger.new($stderr)
+$logger.level = Logger::WARN
+$logger.formatter = lambda {|lvl,_,_,msg| "[#{lvl}] #{msg}\n"}
+$file = nil
+$lineno = nil
+$noop = false
+$nonet = false
+
+
+def self.errmsg(msg)
+  $logger.warn "(#{$file}:#{$lineno}) #{msg}"
+end
+
+def self.api_search_url(name,query=true)
+  if query
+    API_SEARCH_QUERY.gsub(/::QUERY::/,URI.encode(name))
+  else
+    API_SEARCH_URL.gsub(/::QUERY::/,URI.encode(name))
+  end
+end
+
+def self.api_result_url(id_path,lang)
+  URI.encode(File.join(API_SITE,lang,id_path),'[]{}')
+end
+
+def self.select_id(name,links)
+  # name exact match
+  links.select!{|l| l.split(/{|\[|--/)[0] =~ /\/#{name.gsub(/\s/,'-').delete('.')}$/}
+  $logger.debug("SelectName[#{name}]: #{links.pretty_inspect}")
+
+  # only Spells and NPCs
+  links.select!{|l| l =~ /^\/(?:spell|npc)\//}
+  $logger.debug("SelectSpellNpc[#{name}]: #{links.pretty_inspect}")
+
+  # TODO: interactive select if more than one result
+  $logger.debug("Several choices to translate #{name.inspect}, "\
+    "arbitrary picking #{links.first.inspect}")
+
+  links.first
+end
+
+def self.id(name)
+  $logger.debug("Fetch[#{name}]: #{api_search_url(name).inspect}")
+  return if $nonet
+  begin
+    doc_search = Nokogiri::HTML(open(api_search_url(name)))
+    sleep 0.3
+  rescue Exception => e
+    abort "Cannot fetch #{api_search_url(name,false)}: #{e.message}"
+  end
+
+  res = doc_search.xpath(XPATH_SEARCH_RESULTS)
+  if !res or res.empty?
+    #errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})")
+    return
+  end
+
+  res = res.to_a.map!{|l| l['href']}
+  $logger.debug("Results[#{name}]: #{res.pretty_inspect}")
+
+  res = select_id(name,res)
+  if !res or res.empty?
+    #errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})")
+    return
+  end
+  $logger.debug("Path[#{name}]: #{res.inspect}")
+
+  res
+end
+
+def self.translate(name,lang)
+  return if $nonet
+  id = id(name)
+  return unless id
+
+  $logger.debug("Fetch[#{name}]: #{api_result_url(name,lang).inspect}")
+  begin
+    doc_result = Nokogiri::HTML(open(api_result_url(id,lang)))
+    sleep 0.3
+  rescue Exception => e
+    abort "Cannot fetch #{api_result_url(name,lang)}: #{e.message}"
+  end
+
+  res = doc_result.xpath(XPATH_RESULT_NAME)
+
+  if !res or res.empty?
+    errmsg("No name for '#{name}' (see #{api_result_url(id,lang)})")
+    return
+  end
+
+  $logger.debug("Translation[#{name}]: #{res.text.inspect}")
+
+  res.text
+end
+
+
+lang = 'fr'
+comm = true
+tfile = nil
+ofile = nil
+
+optparse = OptionParser.new(USAGE) do |op|
+  op.banner = USAGE
+  op.on('-h', '--help', 'Display this screen') do
+    $stdout.puts op
+    exit
+  end
+  op.on('-c','--[no-]comment','Add comments to specify the original names') do |c|
+    comm = c
+  end
+  op.on('-l','--lang NAME',['fr','de'],'The output language (default: fr)') do |l|
+    lang = l
+  end
+  op.on('-n','--noop','Do not do not write translations in their files') do
+    $noop = true
+  end
+  op.on('-N','--no-network','Do not download any translations from the network') do
+    $nonet = true
+  end
+  op.on('-o','--output FILE','Dump data in a file') do |f|
+    ofile = f
+  end
+  op.on('-t','--translation-file FILE','Load translations from a file') do |f|
+    tfile = f
+  end
+  op.on('-d','--debug','Debug mode') do
+    $logger.level = Logger::DEBUG
+  end
+  op.on('-v','--verbose','Verbose mode') do
+    $logger.level = Logger::INFO
+  end
+end
+
+begin
+  optparse.parse!
+rescue OptionParser::MissingArgument,OptionParser::InvalidOption => e
+  abort e.message
+end
+
+abort USAGE if ARGV.size < 2
+abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|dump)$/
+
+
+cmd = ARGV[0].to_sym
+translations = nil
+files = []
+
+if ofile
+  if File.exist?(ofile)
+    abort "Cannot write file #{ofile}" unless File.writable?(ofile)
+  else
+    abort "Cannot create file #{ofile}" unless File.writable?(File.dirname(ofile))
+  end
+end
+
+if tfile
+  abort "Cannot read file #{tfile}" unless File.readable?(tfile)
+  begin
+    translations = JSON.parse(File.read(tfile,encoding: 'utf-8'))
+  rescue Exception => e
+    abort "Invalid JSON file #{tfile}: #{e.message}"
+  end
+else
+  translations = {}
+end
+
+ARGV[1..-1].each do |f|
+  abort "Cannot read file #{f}" unless File.readable?(f)
+
+  if File.file?(f)
+    files << f
+  elsif File.directory?(f)
+    files += Dir[File.join(f,'**','*')].to_a
+  else
+    abort "Not a file or directory #{f}"
+  end
+end
+
+abort "No files found in #{ARGV[1..-1].join(', ')}" if files.empty?
+
+files.each do |file|
+  content = ""
+  $file = file
+  $lineno = 0
+  $logger.info("Convert #{file}")
+
+  File.open(file,'r').each_line do |line|
+    $lineno += 1
+    line.chomp!
+    comment = nil
+
+    if line =~ R_RAIDCORE
+      names = Regexp.last_match.to_a[1..-1]
+      names.compact!
+      names.map!{|name| name.scan(/"([^"]+)"/)}.flatten!
+      names.delete_if{|name| name =~ /^[A-Z_-]+$/} # constants
+      names.sort!{|x,y| (x.size < y.size ? 1 : -1)} # long names first
+
+      unless names.empty?
+        names.inject(translations) do |ret,name|
+          # use the cache if possible
+          $logger.info("  Translate #{name.inspect} (l.#{$lineno})")
+          ret[name] = translations[name] || translate(name,lang)
+          errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})") \
+            unless ret[name]
+          ret
+        end
+
+        if cmd == :convert
+          names.each do |name|
+            line.gsub!(/#{Regexp.escape(name)}/,translations[name]) \
+              if translations[name]
+          end
+          comment = " -- #{names.join(', ')}" if comm
+        #elsif cmd == :convert
+        #  line.gsub!(/Name/,'Id') # cosmetic
+        #  line.chomp! << " -- #{names.join(', ')}"
+        end
+      end
+    end
+
+    if cmd == :convert
+      content << line
+      content << comment if comment
+      content << "\r\n"
+    end
+  end
+
+  File.open(file,'w'){|f| f.write(content)} if cmd == :convert and !$noop
+end
+
+if cmd == :dump
+  dump = JSON.pretty_generate(translations)
+  if ofile
+    File.open(ofile,'w'){|f| f.puts dump}
+  else
+    $stdout.puts dump
+  end
+end
