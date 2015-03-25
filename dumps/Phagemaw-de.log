@@ -1,0 +1,12 @@
+[INFO] Convert Raidcore/Modules/Phagemaw.lua
+[INFO]   Translate "Phage Maw" (l.10)
+[INFO]   Translate "Experimentation Lab CX-33" (l.11)
+[WARN] (Raidcore/Modules/Phagemaw.lua:11) No reference for 'Experimentation Lab CX-33' (see http://wildstar.datminer.com/search/Experimentation%20Lab%20CX-33)
+[INFO]   Translate "Experimentation Lab CX-33" (l.12)
+[WARN] (Raidcore/Modules/Phagemaw.lua:12) No reference for 'Experimentation Lab CX-33' (see http://wildstar.datminer.com/search/Experimentation%20Lab%20CX-33)
+[INFO]   Translate "Detonation Bomb" (l.38)
+[INFO]   Translate "The augmented shield has been destroyed" (l.46)
+[WARN] (Raidcore/Modules/Phagemaw.lua:46) No reference for 'The augmented shield has been destroyed' (see http://wildstar.datminer.com/search/The%20augmented%20shield%20has%20been%20destroyed)
+[INFO]   Translate "Phage Maw begins charging an orbital strike" (l.51)
+[WARN] (Raidcore/Modules/Phagemaw.lua:51) No reference for 'Phage Maw begins charging an orbital strike' (see http://wildstar.datminer.com/search/Phage%20Maw%20begins%20charging%20an%20orbital%20strike)
+[INFO]   Translate "Maelstrom Authority" (l.60)
