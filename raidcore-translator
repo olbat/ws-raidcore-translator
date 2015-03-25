@@ -235,7 +235,6 @@ files.each do |file|
       names.compact!
       names.map!{|name| name.scan(/"([^"]+)"/)}.flatten!
       names.delete_if{|name| name =~ /^[A-Z_-]+$/} # constants
-      names.sort!{|x,y| (x.size < y.size ? 1 : -1)} # long names first
 
       unless names.empty?
         names.inject(translations) do |ret,name|
@@ -249,11 +248,11 @@ files.each do |file|
 
         if cmd == :convert
           names.each do |name|
-            line.gsub!(/#{Regexp.escape(name)}/,translations[name]) \
+            line.gsub!(/"#{Regexp.escape(name)}"/,"\"#{translations[name]}\"") \
               if translations[name]
           end
           comment = " -- #{names.join(', ')}" if comm
-        #elsif cmd == :convert
+        #elsif cmd == :convertid
         #  line.gsub!(/Name/,'Id') # cosmetic
         #  line.chomp! << " -- #{names.join(', ')}"
         end
