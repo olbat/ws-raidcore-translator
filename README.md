@@ -1,17 +1,22 @@
 # ws-raidcore-translator
 
+
 ## Overview
 This small script handles the -automatic- translation of the Wildstar [RaidCore add-on](https://github.com/NielsH/RaidCore).
 
+
 ## Installation
 `$ docker pull olbat/ws-raidcore-translator`
+
 
 ## Getting Started
 1. Download and extract [the archive](https://github.com/NielsH/RaidCore/archive/master.zip) of the Raidcore add-on source code
 2. Run the raidcore-translator script in a docker container (by default it convert the files in the Modules directory):
 ```
-$ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator raidcore-translator [options...]
+$ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
+    raidcore-translator [options...]
 ```
+
 
 ## Use cases
 ### Translate the Raidcore module in French
@@ -29,6 +34,7 @@ $ cat /path/to/Raidcore/dump-de.json
 
 ### Translate the Raidcore module using a translation file
 _Note_: the translation file contains translations that for items that cant be downloaded by the script
+
 ```
 $ cat /path/to/Raidcore/example-fr.json
 {
@@ -41,6 +47,23 @@ $ cat /path/to/Raidcore/example-fr.json
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
     raidcore-translator convert -l fr -t /src/example-fr.json -v /src/Modules
 ```
+
+### Generate dumps for every Raidcore modules
+```
+$ git submodule init
+$ git submodule update
+$ docker run -it -w /src -v $(pwd):/src olbat/ws-raidcore-translator \
+    ./generate-dumps.sh Raidcore/Modules dumps
+$ ls dumps/
+All-de.json            EpEarthLogic-fr.log     Kuralak-fr.json
+All-de.log             EpFrostAir-de.json      Kuralak-fr.log
+All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
+All-fr.log             EpFrostAir-fr.json      MaelstromAuthority-de.log
+Avatus-de.json         EpFrostAir-fr.log       MaelstromAuthority-fr.json
+Avatus-de.log          EpFrostFire-de.json     MaelstromAuthority-fr.log
+...
+```
+
 
 ## Usage
 ```
@@ -56,6 +79,7 @@ usage: raidcore-translator <convert|dump> [opts] <file1> <file2> ... <fileN>
     -v, --verbose                    Verbose mode
 ```
 
+
 ## How does it work
 
 This script parses the source code of the [RaidCore add-on](https://github.com/NielsH/RaidCore) to find what spell/zone/NPC names and messages are used.
@@ -70,8 +94,16 @@ _Note_: The JSON dump can (will?) be used to generate localization/translation f
 
 Since some translations cannot be downloaded from the web (boss messages, ...), it's possible to specify a translation file (JSON Hash, key: english name, value: translated name) to specify missing translations.
 
+
+## Dumps
+
+Several dumps are available in the `dumps/` directory (_.json_ files).
+
+The `dumps/All-fr.json` and `dumps/All-de.json` files are containing French and German translations for every modules of the addon.
+
+
 ## Run examples
-### Dump
+### Generate dumps for a specific file
 ```
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
     raidcore-translator dump -o /src/dump.json /src/Modules/SystemDeamons.lua
@@ -80,15 +112,7 @@ $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
 [WARN] (/src/Modules/SystemDeamons.lua:12) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
 [WARN] (/src/Modules/SystemDeamons.lua:13) No reference for 'Lower Infinite Generator Core' (see http://wildstar.datminer.com/search/Lower%20Infinite%20Generator%20Core)
 [WARN] (/src/Modules/SystemDeamons.lua:13) No reference for 'Halls of the Infinite Mind' (see http://wildstar.datminer.com/search/Halls%20of%20the%20Infinite%20Mind)
-[WARN] (/src/Modules/SystemDeamons.lua:13) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[WARN] (/src/Modules/SystemDeamons.lua:106) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[WARN] (/src/Modules/SystemDeamons.lua:110) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[WARN] (/src/Modules/SystemDeamons.lua:114) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[WARN] (/src/Modules/SystemDeamons.lua:230) No reference for 'Halls of the Infinite Mind' (see http://wildstar.datminer.com/search/Halls%20of%20the%20Infinite%20Mind)
-[WARN] (/src/Modules/SystemDeamons.lua:240) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[WARN] (/src/Modules/SystemDeamons.lua:267) No reference for 'INVALID SIGNAL. DISCONNECTING' (see http://wildstar.datminer.com/search/INVALID%20SIGNAL.%20DISCONNECTING)
-[WARN] (/src/Modules/SystemDeamons.lua:277) No reference for 'COMMENCING ENHANCEMENT SEQUENCE' (see http://wildstar.datminer.com/search/COMMENCING%20ENHANCEMENT%20SEQUENCE)
-[WARN] (/src/Modules/SystemDeamons.lua:362) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
+...
 
 $ cat /path/to/Raidcore/dump.json
 {
@@ -128,52 +152,8 @@ $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
 [INFO]   Translate "Infinite Generator Core" (l.12)
 [WARN] (/src/Modules/SystemDeamons.lua:12) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
 [INFO]   Translate "Lower Infinite Generator Core" (l.13)
-[WARN] (/src/Modules/SystemDeamons.lua:13) No reference for 'Lower Infinite Generator Core' (see http://wildstar.datminer.com/search/Lower%20Infinite%20Generator%20Core)
-[INFO]   Translate "Halls of the Infinite Mind" (l.13)
-[WARN] (/src/Modules/SystemDeamons.lua:13) No reference for 'Halls of the Infinite Mind' (see http://wildstar.datminer.com/search/Halls%20of%20the%20Infinite%20Mind)
-[INFO]   Translate "Infinite Generator Core" (l.13)
-[WARN] (/src/Modules/SystemDeamons.lua:13) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[INFO]   Translate "Binary System Daemon" (l.95)
-[INFO]   Translate "Null System Daemon" (l.95)
-[INFO]   Translate "Conduction Unit Mk. I" (l.104)
-[INFO]   Translate "Infinite Generator Core" (l.106)
-[WARN] (/src/Modules/SystemDeamons.lua:106) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[INFO]   Translate "Conduction Unit Mk. II" (l.108)
-[INFO]   Translate "Infinite Generator Core" (l.110)
-[WARN] (/src/Modules/SystemDeamons.lua:110) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[INFO]   Translate "Conduction Unit Mark III" (l.112)
-[INFO]   Translate "Infinite Generator Core" (l.114)
-[WARN] (/src/Modules/SystemDeamons.lua:114) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[INFO]   Translate "Enhancement Module" (l.115)
-[INFO]   Translate "Recovery Protocol" (l.121)
-[INFO]   Translate "Enhancement Module" (l.128)
-[INFO]   Translate "Recovery Protocol" (l.160)
-[INFO]   Translate "Repair Sequence" (l.160)
-[INFO]   Translate "Binary System Daemon" (l.167)
-[INFO]   Translate "Power Surge" (l.167)
-[INFO]   Translate "Null System Daemon" (l.172)
-[INFO]   Translate "Power Surge" (l.172)
-[INFO]   Translate "Purge" (l.177)
-[INFO]   Translate "Defragmentation Unit" (l.185)
-[INFO]   Translate "Black IC" (l.185)
-[INFO]   Translate "Recovery Protocol" (l.188)
-[INFO]   Translate "Repair Sequence" (l.188)
-[INFO]   Translate "Overload" (l.206)
-[INFO]   Translate "Purge" (l.208)
-[INFO]   Translate "Overload" (l.220)
-[INFO]   Translate "Purge" (l.222)
-[INFO]   Translate "Datascape" (l.228)
-[INFO]   Translate "Halls of the Infinite Mind" (l.230)
-[WARN] (/src/Modules/SystemDeamons.lua:230) No reference for 'Halls of the Infinite Mind' (see http://wildstar.datminer.com/search/Halls%20of%20the%20Infinite%20Mind)
-[INFO]   Translate "Infinite Generator Core" (l.240)
-[WARN] (/src/Modules/SystemDeamons.lua:240) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
-[INFO]   Translate "INVALID SIGNAL. DISCONNECTING" (l.267)
-[WARN] (/src/Modules/SystemDeamons.lua:267) No reference for 'INVALID SIGNAL. DISCONNECTING' (see http://wildstar.datminer.com/search/INVALID%20SIGNAL.%20DISCONNECTING)
-[INFO]   Translate "COMMENCING ENHANCEMENT SEQUENCE" (l.277)
-[WARN] (/src/Modules/SystemDeamons.lua:277) No reference for 'COMMENCING ENHANCEMENT SEQUENCE' (see http://wildstar.datminer.com/search/COMMENCING%20ENHANCEMENT%20SEQUENCE)
-[INFO]   Translate "Binary System Daemon" (l.343)
-[INFO]   Translate "Null System Daemon" (l.343)
-[INFO]   Translate "Defragmentation Unit" (l.361)
-[INFO]   Translate "Infinite Generator Core" (l.362)
-[WARN] (/src/Modules/SystemDeamons.lua:362) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
+...
 ```
+
+### More
+Log files of the `generate-dumps.sh` runs are available in the `dumps/` directory (_.log_ files).
