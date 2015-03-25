@@ -66,7 +66,9 @@ end
 
 def self.select_id(name,links)
   # name exact match
-  links.select!{|l| l.split(/{|\[|--/)[0] =~ /\/#{name.gsub(/\s/,'-').delete('.')}$/}
+  links.select! do |l|
+    l.split(/{|\[/)[0].gsub(/---/,'-') =~ /\/#{name.gsub(/\s/,'-').delete('.')}$/
+  end
   $logger.debug("SelectName[#{name}]: #{links.pretty_inspect}")
 
   # only Spells and NPCs
@@ -75,7 +77,7 @@ def self.select_id(name,links)
 
   # TODO: interactive select if more than one result
   $logger.debug("Several choices to translate #{name.inspect}, "\
-    "arbitrary picking #{links.first.inspect}")
+    "arbitrary picking #{links.first.inspect}") if links.size > 1
 
   links.first
 end
