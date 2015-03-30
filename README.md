@@ -19,16 +19,22 @@ $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
 
 
 ## Use cases
-### Translate the Raidcore module in French
+### Rewrite the Raidcore module in French
 ```
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
     raidcore-translator convert -l fr -v /src/Modules
 ```
 
+### Translate the Raidcore module in French
+```
+$ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
+    raidcore-translator i18n -l fr -v /src/Modules
+```
+
 ### Generate a JSON dump of German translations
 ```
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
-    raidcore-translator dump -l de -o /src/dump-de.json /src/Modules
+    raidcore-translator dump -n -l de -o /src/dump-de.json /src/Modules
 $ cat /path/to/Raidcore/dump-de.json
 ```
 
@@ -45,15 +51,15 @@ $ cat /path/to/Raidcore/example-fr.json
 }
 
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
-    raidcore-translator convert -l fr -t /src/example-fr.json -v /src/Modules
+    raidcore-translator i18n -l fr -t /src/example-fr.json -v /src/Modules
 ```
 
-### Generate dumps for every Raidcore modules
+### Generate rewrite dumps for every Raidcore modules
 ```
 $ git submodule init
 $ git submodule update
 $ docker run -it -w /src -v $(pwd):/src olbat/ws-raidcore-translator \
-    ./generate-dumps.sh Raidcore/Modules dumps
+    ./generate-dumps.sh convert Raidcore/Modules dumps
 $ ls dumps/
 All-de.json            EpEarthLogic-fr.log     Kuralak-fr.json
 All-de.log             EpFrostAir-de.json      Kuralak-fr.log
@@ -61,6 +67,22 @@ All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 All-fr.log             EpFrostAir-fr.json      MaelstromAuthority-de.log
 Avatus-de.json         EpFrostAir-fr.log       MaelstromAuthority-fr.json
 Avatus-de.log          EpFrostFire-de.json     MaelstromAuthority-fr.log
+...
+```
+
+### Generate translation dumps for every Raidcore modules
+```
+$ git submodule init
+$ git submodule update
+$ cd Raidcore
+$ git fetch origin translation2
+$ git checkout FETCH_HEAD
+$ docker run -it -w /src -v $(pwd):/src olbat/ws-raidcore-translator \
+    ./generate-dumps.sh i18n Raidcore/Modules dumps
+$ ls dumps/
+All-de.json            EpEarthLogic-fr.log     Kuralak-fr.json
+All-de.log             EpFrostAir-de.json      Kuralak-fr.log
+All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 ...
 ```
 
@@ -88,9 +110,8 @@ Then it uses the [wildstar.datminer.com](http://wildstar.datminer.com/) website 
 
 Translations can then exploited two different ways:
 * __convert__: re-write the source code of the add-on to use the translated names
-* __dump__: generate a JSON file containing every translations (a Hash, key: english name, value: translated name)
+* __i18n__: translate the source code of the add-on using internationalization variables (see https://github.com/NielsH/RaidCore/tree/translation2)
 
-_Note_: The JSON dump can (will?) be used to generate localization/translation files for the addon.
 
 Since some translations cannot be downloaded from the web (boss messages, ...), it's possible to specify a translation file (JSON Hash, key: english name, value: translated name) to specify missing translations.
 
@@ -99,14 +120,14 @@ Since some translations cannot be downloaded from the web (boss messages, ...), 
 
 Several dumps are available in the `dumps/` directory (_.json_ files).
 
-The `dumps/All-fr.json` and `dumps/All-de.json` files are containing French and German translations for every modules of the addon.
+The `dumps/All-fr.json` and `dumps/All-de.json` files are containing French and German translations for every modules of the add-on.
 
 
 ## Run examples
-### Generate dumps for a specific file
+### Generate rewrite dumps for a specific file
 ```
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
-    raidcore-translator dump -o /src/dump.json /src/Modules/SystemDeamons.lua
+    raidcore-translator convert -n -o /src/dump.json /src/Modules/SystemDeamons.lua
 [WARN] (/src/Modules/SystemDeamons.lua:12) No reference for 'Lower Infinite Generator Core' (see http://wildstar.datminer.com/search/Lower%20Infinite%20Generator%20Core)
 [WARN] (/src/Modules/SystemDeamons.lua:12) No reference for 'Halls of the Infinite Mind' (see http://wildstar.datminer.com/search/Halls%20of%20the%20Infinite%20Mind)
 [WARN] (/src/Modules/SystemDeamons.lua:12) No reference for 'Infinite Generator Core' (see http://wildstar.datminer.com/search/Infinite%20Generator%20Core)
@@ -138,7 +159,7 @@ $ cat /path/to/Raidcore/dump.json
 }
 ```
 
-### Verbose convert
+### Verbose rewrite
 ```
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
     raidcore-translator convert -v /src/Modules/SystemDeamons.lua

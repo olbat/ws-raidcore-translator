@@ -8,11 +8,11 @@ require 'json'
 require 'uri'
 require 'pp'
 
-USAGE="usage: #{$0} <convert|dump> [opts] <file1> <file2> ... <fileN>"
+USAGE="usage: #{$0} <convert|i18n> [opts] <file1> <file2> ... <fileN>"
 
 R_STR=/"[^"]+"/
 R_COND=/\s+\w+\s+==\s+(#{R_STR.source})\s+/
-R_RAIDCORE=%r{(?:
+R_RAIDCORE_CONVERT=%r{(?:
   ^\s*(?:else)?if#{R_COND.source}(?:(?:and|or)#{R_COND.source})?then\s*
   |^\s*(?:else)?if\s*[a-zA-Z]+(?:\(\))?:find\(\s*(#{R_STR.source})\s*\)
   |^[a-z]+:Register[a-zA-Z]+Objective\(.*\)
@@ -26,6 +26,9 @@ R_RAIDCORE=%r{(?:
       \s*(#{R_STR.source})\s*
     \)
 )}x
+LANG={en:"enUS", fr:"frFR", de:"deDE"}
+R_LANG_EN=%r{^\s\[\s*"#{LANG[:en]}"\s*\]}
+R_RAIDCORE_I18N=/^\s*(\w+)\s*=\s*(#{R_STR.source})/
 
 API_SITE='http://wildstar.datminer.com'
 API_SEARCH_URL=File.join(API_SITE,'/search/::QUERY::')
@@ -139,6 +142,7 @@ end
 
 lang = 'fr'
 comm = true
+dump = false
 tfile = nil
 ofile = nil
 
@@ -150,6 +154,9 @@ optparse = OptionParser.new(USAGE) do |op|
   end
   op.on('-c','--[no-]comment','Add comments to specify the original names') do |c|
     comm = c
+  end
+  op.on('-d','--dump','Generate a JSON dump of translations') do
+    dump = true
   end
   op.on('-l','--lang NAME',['fr','de'],'The output language (default: fr)') do |l|
     lang = l
@@ -166,7 +173,7 @@ optparse = OptionParser.new(USAGE) do |op|
   op.on('-t','--translation-file FILE','Load translations from a file') do |f|
     tfile = f
   end
-  op.on('-d','--debug','Debug mode') do
+  op.on('-D','--debug','Debug mode') do
     $logger.level = Logger::DEBUG
   end
   op.on('-v','--verbose','Verbose mode') do
@@ -181,7 +188,7 @@ rescue OptionParser::MissingArgument,OptionParser::InvalidOption => e
 end
 
 abort USAGE if ARGV.size < 2
-abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|dump)$/
+abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|i18n)$/
 
 
 cmd = ARGV[0].to_sym
@@ -223,16 +230,22 @@ abort "No files found in #{ARGV[1..-1].join(', ')}" if files.empty?
 
 files.each do |file|
   content = ""
+  if cmd == :i18n
+    i18n_head = nil
+    i18n_block = false
+    i18n_vars = {}
+    i18n_lvl = 0
+  end
   $file = file
   $lineno = 0
   $logger.info("Convert #{file}")
 
-  File.open(file,'r').each_line do |line|
+  File.open(file,'r:utf-8').each_line do |line|
     $lineno += 1
     line.chomp!
     comment = nil
 
-    if line =~ R_RAIDCORE
+    if cmd == :convert and line =~ R_RAIDCORE_CONVERT
       names = Regexp.last_match.to_a[1..-1]
       names.compact!
       names.map!{|name| name.scan(/"([^"]+)"/)}.flatten!
@@ -249,33 +262,70 @@ files.each do |file|
         end
 
         if cmd == :convert
+          comments = []
           names.each do |name|
-            line.gsub!(/"#{Regexp.escape(name)}"/,"\"#{translations[name]}\"") \
-              if translations[name]
+            if translations[name]
+              line.gsub!(/"#{Regexp.escape(name)}"/,"\"#{translations[name]}\"")
+              comments << name
+            else
+              comments << "!!! #{name}"
+            end
           end
-          comment = " -- #{names.join(', ')}" if comm
-        #elsif cmd == :convertid
-        #  line.gsub!(/Name/,'Id') # cosmetic
-        #  line.chomp! << " -- #{names.join(', ')}"
+          comment = comments.join(', ')
+        end
+      end
+    elsif cmd == :i18n and (i18n_block or line =~ R_LANG_EN)
+      i18n_head = line.dup unless i18n_block
+      i18n_block = true
+      i18n_lvl += line.count('{')
+
+      i18n_vars[Regexp.last_match[1]] = {
+        name: Regexp.last_match[2],
+        line: line.dup,
+        lineno: $lineno,
+      } if line =~ R_RAIDCORE_I18N
+
+      i18n_lvl -= line.count('}') # FIXME: dirty, does not handle inline
+
+      if i18n_lvl <= 0 # closing }
+        i18n_block = false
+
+        content << line
+        content << "\r\n"
+        content << i18n_head.gsub(LANG[:en],LANG[lang.to_sym])
+        content << "\r\n"
+
+        i18n_vars.each do |key,val|
+          # use the cache if possible
+          name = val[:name].gsub(/"([^"]+)"/,'\1')
+          $logger.info("  Translate #{name.inspect} (l.#{val[:lineno]})")
+          translations[name] = translate(name,lang) unless translations[name]
+          errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})") \
+            unless translations[name]
+
+          content << val[:line].gsub(
+            /"#{Regexp.escape(name)}"/,
+            "\"#{translations[name]||''}\""
+          )
+          content << "\t-- !!!" if comm and !translations[name]
+          content << "\r\n"
         end
       end
     end
 
-    if cmd == :convert
-      content << line
-      content << comment if comment
-      content << "\r\n"
-    end
+    content << line
+    content << " -- #{comment}" if comm and comment
+    content << "\r\n"
   end
 
-  File.open(file,'w'){|f| f.write(content)} if cmd == :convert and !$noop
+  File.open(file,'w'){|f| f.write(content)} unless $noop
 end
 
-if cmd == :dump
-  dump = JSON.pretty_generate(translations)
+if dump
+  dumps = JSON.pretty_generate(translations)
   if ofile
-    File.open(ofile,'w'){|f| f.puts dump}
+    File.open(ofile,'w'){|f| f.puts dumps}
   else
-    $stdout.puts dump
+    $stdout.puts dumps
   end
 end
