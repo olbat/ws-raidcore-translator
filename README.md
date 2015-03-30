@@ -39,7 +39,9 @@ $ cat /path/to/Raidcore/dump-de.json
 ```
 
 ### Translate the Raidcore module using a translation file
-_Note_: the translation file contains translations that for items that cant be downloaded by the script
+The translation file contains translations that for items that cant be downloaded by the script
+
+_Note_: two -incomplete- translation files are available in the repository: `french.json` and `german.json`
 
 ```
 $ cat /path/to/Raidcore/example-fr.json
@@ -121,6 +123,15 @@ Since some translations cannot be downloaded from the web (boss messages, ...), 
 Several dumps are available in the `dumps/` directory (_.json_ files).
 
 The `dumps/All-fr.json` and `dumps/All-de.json` files are containing French and German translations for every modules of the add-on.
+
+
+## Translation files
+
+The translation files contains translations that for items that cant be downloaded by the script. Basically: messages sent from the bosses, zone names, ... .
+
+This files can be used in the script by specifying the `-t` option.
+
+Two -incomplete- translation files are availables in the repository: `french.json` and `german.json`, feel free to complete them !
 
 
 ## Run examples
