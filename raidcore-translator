@@ -266,9 +266,9 @@ files.each do |file|
           names.each do |name|
             if translations[name]
               line.gsub!(/"#{Regexp.escape(name)}"/,"\"#{translations[name]}\"")
-              comments << name
+              comments << "\"#{name}\""
             else
-              comments << "!!! #{name}"
+              comments << "!!! \"#{name}\""
             end
           end
           comment = comments.join(', ')
@@ -307,7 +307,7 @@ files.each do |file|
             /"#{Regexp.escape(name)}"/,
             "\"#{translations[name]||''}\""
           )
-          content << "\t-- !!!" if comm and !translations[name]
+          content << "\t-- !!! \"#{name}\"" if comm and !translations[name]
           content << "\r\n"
         end
       end
