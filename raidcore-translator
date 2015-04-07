@@ -35,7 +35,7 @@ R_REG_LOCALE={
   de: /^[a-z]+:RegisterGermanLocale\(/,
 }
 R_RAIDCORE_I18N_V1=/^\s*(\w+)\s*=\s*(#{R_STR.source})/
-R_RAIDCORE_I18N_V2=/^\s*\[("([^"]+)")\]\s*=\s*(#{R_STR.source})/
+R_RAIDCORE_I18N_V2=/^\s*\[(#{R_STR.source})\]\s*=\s*(#{R_STR.source})/
 
 API_SITE='http://wildstar.datminer.com'
 API_SEARCH_URL=File.join(API_SITE,'/search/::QUERY::')
@@ -329,7 +329,7 @@ files.each do |file|
             /"#{Regexp.escape(name)}"/,
             "\"#{translations[name]||''}\""
           )
-          content << "\t-- !!!" if comm and !translations[name]
+          content << "\t-- !!! \"#{name}\"" if comm and !translations[name]
           content << "\r\n"
         end
       end
