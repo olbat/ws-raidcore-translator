@@ -5,7 +5,7 @@ set -x
 [ $# -ge 2 ] || (echo "usage: $0 <convert|i18n> <raidcore_dir> <dump_dir> [-- <options>]"; exit 1)
 
 mode=$1
-[ "$mode" == "convert" ] || [ "$mode" == "i18n" ] || (echo "invalid mode '$mode'"; exit 1)
+[ "$mode" == "convert" ] || [ "$mode" == "i18n_v1" ] || [ "$mode" == "i18n_v2" ] || (echo "invalid mode '$mode'"; exit 1)
 shift
 rcdir=$1
 shift

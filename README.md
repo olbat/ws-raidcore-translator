@@ -28,7 +28,7 @@ $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
 ### Translate the Raidcore module in French
 ```
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
-    raidcore-translator i18n -l fr -v /src/Modules
+    raidcore-translator i18n_v1 -l fr -v /src/Modules
 ```
 
 ### Generate a JSON dump of German translations
@@ -53,7 +53,7 @@ $ cat /path/to/Raidcore/example-fr.json
 }
 
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
-    raidcore-translator i18n -l fr -t /src/example-fr.json -v /src/Modules
+    raidcore-translator i18n_v2 -l fr -t /src/example-fr.json -v /src/Modules
 ```
 
 ### Generate rewrite dumps for every Raidcore modules
@@ -72,7 +72,7 @@ Avatus-de.log          EpFrostFire-de.json     MaelstromAuthority-fr.log
 ...
 ```
 
-### Generate translation dumps for every Raidcore modules
+### Generate translation dumps for every Raidcore module (1)
 ```
 $ git submodule init
 $ git submodule update
@@ -80,7 +80,23 @@ $ cd Raidcore
 $ git fetch origin translation2
 $ git checkout FETCH_HEAD
 $ docker run -it -w /src -v $(pwd):/src olbat/ws-raidcore-translator \
-    ./generate-dumps.sh i18n Raidcore/Modules dumps
+    ./generate-dumps.sh i18n_v1 Raidcore/Modules dumps
+$ ls dumps/
+All-de.json            EpEarthLogic-fr.log     Kuralak-fr.json
+All-de.log             EpFrostAir-de.json      Kuralak-fr.log
+All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
+...
+```
+
+### Generate translation dumps for every Raidcore module (2)
+```
+$ git submodule init
+$ git submodule update
+$ cd Raidcore
+$ git fetch origin review/translation
+$ git checkout FETCH_HEAD
+$ docker run -it -w /src -v $(pwd):/src olbat/ws-raidcore-translator \
+    ./generate-dumps.sh i18n_v2 Raidcore/Modules dumps
 $ ls dumps/
 All-de.json            EpEarthLogic-fr.log     Kuralak-fr.json
 All-de.log             EpFrostAir-de.json      Kuralak-fr.log
@@ -91,7 +107,7 @@ All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 
 ## Usage
 ```
-usage: raidcore-translator <convert|dump> [opts] <file1> <file2> ... <fileN>
+usage: raidcore-translator <convert|i18n_v1|i18n_v2> [opts] <file1> <file2> ... <fileN>
     -h, --help                       Display this screen
     -c, --[no-]comment               Add comments to specify the original names
     -l, --lang NAME                  The output language (default: fr)
@@ -112,7 +128,8 @@ Then it uses the [wildstar.datminer.com](http://wildstar.datminer.com/) website 
 
 Translations can then exploited two different ways:
 * __convert__: re-write the source code of the add-on to use the translated names
-* __i18n__: translate the source code of the add-on using internationalization variables (see https://github.com/NielsH/RaidCore/tree/translation2)
+* __i18n_v1__: translate the source code of the _translation2_ branch of the add-on using internationalization variables (see https://github.com/NielsH/RaidCore/tree/translation2)
+* __i18n_v2__: translate the source code of the _review/translation_ branch of the add-on using internationalization variables (see https://github.com/NielsH/RaidCore/tree/review/translation)
 
 
 Since some translations cannot be downloaded from the web (boss messages, ...), it's possible to specify a translation file (JSON Hash, key: english name, value: translated name) to specify missing translations.

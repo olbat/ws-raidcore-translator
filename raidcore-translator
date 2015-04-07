@@ -8,7 +8,7 @@ require 'json'
 require 'uri'
 require 'pp'
 
-USAGE="usage: #{$0} <convert|i18n> [opts] <file1> <file2> ... <fileN>"
+USAGE="usage: #{$0} <convert|i18n_v1|i18n_v2> [opts] <file1> <file2> ... <fileN>"
 
 R_STR=/"[^"]+"/
 R_COND=/\s+\w+\s+==\s+(#{R_STR.source})\s+/
@@ -27,8 +27,15 @@ R_RAIDCORE_CONVERT=%r{(?:
     \)
 )}x
 LANG={en:"enUS", fr:"frFR", de:"deDE"}
+SLANG={en: "English", fr: "French", de: "German"}
 R_LANG_EN=%r{^\s\[\s*"#{LANG[:en]}"\s*\]}
-R_RAIDCORE_I18N=/^\s*(\w+)\s*=\s*(#{R_STR.source})/
+R_REG_LOCALE={
+  en: /^[a-z]+:RegisterEnglishLocale\(/,
+  fr: /^[a-z]+:RegisterFrenchLocale\(/,
+  de: /^[a-z]+:RegisterGermanLocale\(/,
+}
+R_RAIDCORE_I18N_V1=/^\s*(\w+)\s*=\s*(#{R_STR.source})/
+R_RAIDCORE_I18N_V2=/^\s*\[("([^"]+)")\]\s*=\s*(#{R_STR.source})/
 
 API_SITE='http://wildstar.datminer.com'
 API_SEARCH_URL=File.join(API_SITE,'/search/::QUERY::')
@@ -188,7 +195,7 @@ rescue OptionParser::MissingArgument,OptionParser::InvalidOption => e
 end
 
 abort USAGE if ARGV.size < 2
-abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|i18n)$/
+abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|i18n_v1|i18n_v2)$/
 
 
 cmd = ARGV[0].to_sym
@@ -230,12 +237,19 @@ abort "No files found in #{ARGV[1..-1].join(', ')}" if files.empty?
 
 files.each do |file|
   content = ""
-  if cmd == :i18n
+  block_comment = false
+  if cmd.to_s =~ /^i18n_/
     i18n_head = nil
     i18n_block = false
-    i18n_vars = {}
     i18n_lvl = 0
   end
+  if cmd == :i18n_v1
+    i18n_vars = {}
+    i18n_block_lang = false
+  elsif cmd == :i18n_v2
+    i18n_vars = []
+  end
+
   $file = file
   $lineno = 0
   $logger.info("Convert #{file}")
@@ -245,7 +259,15 @@ files.each do |file|
     line.chomp!
     comment = nil
 
-    if cmd == :convert and line =~ R_RAIDCORE_CONVERT
+    if line =~ /^\s*--\[\[/
+      # comment block, don't parse
+      block_comment = true
+    elsif line =~ /^\s*--\]\]/
+      # comment block, don't parse
+      block_comment = false
+    elsif block_comment
+      # comment block, don't parse
+    elsif cmd == :convert and line =~ R_RAIDCORE_CONVERT
       names = Regexp.last_match.to_a[1..-1]
       names.compact!
       names.map!{|name| name.scan(/"([^"]+)"/)}.flatten!
@@ -274,7 +296,7 @@ files.each do |file|
           comment = comments.join(', ')
         end
       end
-    elsif cmd == :i18n and (i18n_block or line =~ R_LANG_EN)
+    elsif cmd == :i18n_v1 and (i18n_block or line =~ R_LANG_EN)
       i18n_head = line.dup unless i18n_block
       i18n_block = true
       i18n_lvl += line.count('{')
@@ -283,7 +305,7 @@ files.each do |file|
         name: Regexp.last_match[2],
         line: line.dup,
         lineno: $lineno,
-      } if line =~ R_RAIDCORE_I18N
+      } if line =~ R_RAIDCORE_I18N_V1
 
       i18n_lvl -= line.count('}') # FIXME: dirty, does not handle inline
 
@@ -307,15 +329,81 @@ files.each do |file|
             /"#{Regexp.escape(name)}"/,
             "\"#{translations[name]||''}\""
           )
-          content << "\t-- !!! \"#{name}\"" if comm and !translations[name]
+          content << "\t-- !!!" if comm and !translations[name]
+          content << "\r\n"
+        end
+      end
+    elsif cmd == :i18n_v2 and (i18n_block_lang or line =~ R_REG_LOCALE[lang.to_sym])
+      # comment LANG locale if already defined
+      # TODO: merge instead of commenting
+      content << "-- TODO: to be merged\r\n--[[\r\n" unless i18n_block_lang
+      i18n_block_lang = true
+      i18n_lvl += line.count('{')
+
+      i18n_lvl -= line.count('}') # FIXME: dirty, does not handle inline
+
+      if i18n_lvl <= 0 # closing }
+        i18n_block_lang = false
+        content << line
+        content << "\r\n"
+        line = "--]]\r\n"
+      end
+    elsif cmd == :i18n_v2 and (i18n_block or line =~ R_REG_LOCALE[:en])
+      i18n_head = line.dup unless i18n_block
+      i18n_lvl += line.count('{')
+
+      if line =~ R_RAIDCORE_I18N_V2
+        i18n_vars << {
+          val: Regexp.last_match[1],
+          name: Regexp.last_match[2],
+          line: line.dup,
+          lineno: $lineno,
+        }
+      elsif i18n_block
+        i18n_vars << {
+          line: line.dup,
+          lineno: $lineno,
+        }
+      end
+
+      i18n_block = true
+
+      i18n_lvl -= line.count('}') # FIXME: dirty, does not handle inline
+
+      if i18n_lvl <= 0 # closing }
+        i18n_block = false
+
+        content << line
+        content << "\r\n"
+        content << i18n_head.gsub(SLANG[:en],SLANG[lang.to_sym])
+        content << "\r\n"
+        line = nil
+
+        i18n_vars.each do |var|
+          # use the cache if possible
+          if var[:name]
+            name = var[:name].gsub(/"([^"]+)"/,'\1')
+            $logger.info("  Translate #{name.inspect} (l.#{var[:lineno]})")
+            translations[name] = translate(name,lang) unless translations[name]
+            errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})") \
+              unless translations[name]
+
+            content << var[:line].gsub(
+              /(=\s*)"[^"]+"/,
+              "\\1\"#{translations[name]||name}\""
+            )
+            content << "\t-- !!!!" if comm and !translations[name]
+          else
+            content << var[:line]
+          end
           content << "\r\n"
         end
       end
     end
 
-    content << line
+    content << line if line
     content << " -- #{comment}" if comm and comment
-    content << "\r\n"
+    content << "\r\n" if line
   end
 
   File.open(file,'w'){|f| f.write(content)} unless $noop
