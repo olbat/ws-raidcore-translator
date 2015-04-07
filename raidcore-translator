@@ -152,6 +152,7 @@ comm = true
 dump = false
 tfile = nil
 ofile = nil
+overwrite = true
 
 optparse = OptionParser.new(USAGE) do |op|
   op.banner = USAGE
@@ -173,6 +174,9 @@ optparse = OptionParser.new(USAGE) do |op|
   end
   op.on('-N','--no-network','Do not download any translations from the network') do
     $nonet = true
+  end
+  op.on('-f','--[no-]force','Overwrite previous translations') do |f|
+    overwrite = f
   end
   op.on('-o','--output FILE','Dump data in a file') do |f|
     ofile = f
@@ -337,14 +341,16 @@ files.each do |file|
     elsif cmd == :i18n_v2 and (i18n_block_lang or line =~ R_REG_LOCALE[lang.to_sym])
       # comment LANG locale if already defined
       # TODO: merge instead of commenting
-      content << "-- TODO: to be merged\r\n--[[\r\n" unless i18n_block_lang
+      content << "-- TODO: to be merged\r\n--[[\r\n" \
+        if !i18n_block_lang and !overwrite
       i18n_block_lang = true
       i18n_lvl += line.count('{')
-
       i18n_lvl -= line.count('}') # FIXME: dirty, does not handle inline
+      i18n_block_lang = false if i18n_lvl <= 0 # closing }
+
+      next if overwrite
 
       if i18n_lvl <= 0 # closing }
-        i18n_block_lang = false
         content << line
         content << "\r\n"
         line = "--]]\r\n"

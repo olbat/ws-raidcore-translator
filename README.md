@@ -110,12 +110,14 @@ All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 usage: raidcore-translator <convert|i18n_v1|i18n_v2> [opts] <file1> <file2> ... <fileN>
     -h, --help                       Display this screen
     -c, --[no-]comment               Add comments to specify the original names
+    -d, --dump                       Generate a JSON dump of translations
     -l, --lang NAME                  The output language (default: fr)
     -n, --noop                       Do not do not write translations in their files
     -N, --no-network                 Do not download any translations from the network
+    -f, --[no-]force                 Overwrite previous translations
     -o, --output FILE                Dump data in a file
-    -t, --translation-file FILE      Load translations from a file (download>file)
-    -d, --debug                      Debug mode
+    -t, --translation-file FILE      Load translations from a file
+    -D, --debug                      Debug mode
     -v, --verbose                    Verbose mode
 ```
 
