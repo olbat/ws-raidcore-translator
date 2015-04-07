@@ -385,8 +385,11 @@ files.each do |file|
             name = var[:name].gsub(/"([^"]+)"/,'\1')
             $logger.info("  Translate #{name.inspect} (l.#{var[:lineno]})")
             translations[name] = translate(name,lang) unless translations[name]
-            errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})") \
-              unless translations[name]
+
+            unless translations[name]
+              errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})")
+              content << '--' if comm
+            end
 
             content << var[:line].gsub(
               /(=\s*)"[^"]+"/,
