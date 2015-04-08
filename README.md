@@ -6,8 +6,15 @@ This small script handles the -automatic- translation of the Wildstar [RaidCore 
 
 
 ## Installation
-`$ docker pull olbat/ws-raidcore-translator`
+### with Docker
+1. [Install Docker](https://docs.docker.com/installation/#installation)
+2. Pull the image containing the script and it's runtime environment: `docker pull olbat/ws-raidcore-translator`
+3. Run the script: `docker run ... olbat/ws-raidcore-translator raidcore-translator ...`
 
+### without Docker
+1. [Install Ruby runtime environment](https://www.ruby-lang.org/en/documentation/installation/)
+2. [Install the Nokogiri library](http://www.nokogiri.org/tutorials/installing_nokogiri.html)
+3. Run the script: `raidcore-translator ...`
 
 ## Getting Started
 1. Download and extract [the archive](https://github.com/NielsH/RaidCore/archive/master.zip) of the Raidcore add-on source code
