@@ -157,6 +157,7 @@ dump = false
 tfile = nil
 ofile = nil
 overwrite = true
+read_existing = true
 
 optparse = OptionParser.new(USAGE) do |op|
   op.banner = USAGE
@@ -179,8 +180,11 @@ optparse = OptionParser.new(USAGE) do |op|
   op.on('-N','--no-network','Do not download any translations from the network') do
     $nonet = true
   end
-  op.on('-f','--[no-]force','Overwrite previous translations') do |f|
+  op.on('-O','--[no-]overwrite-existing','Overwrite existing translations') do |f|
     overwrite = f
+  end
+  op.on('-r','--[no-]read-existing','Read existing translations') do |r|
+    read = r
   end
   op.on('-o','--output FILE','Dump data in a file') do |f|
     ofile = f
@@ -251,10 +255,6 @@ files.each do |file|
     i18n_block = false
     i18n_lvl = 0
     i18n_block_lang = false
-  end
-  if cmd == :i18n_v1
-    i18n_vars = {}
-  elsif cmd == :i18n_v2
     i18n_vars = []
   end
 
@@ -311,6 +311,13 @@ files.each do |file|
         if !i18n_block_lang and !overwrite
       i18n_block_lang = true
       i18n_lvl += line.count('{')
+      if read_existing and line =~ R_RAIDCORE_I18N_V1
+        val,name = Regexp.last_match[1..2]
+        if var = i18n_vars.find{|v| v[:val] == val}
+          translations[var[:name].gsub(/"([^"]+)"/,'\1')] =
+            name.gsub(/"([^"]+)"/,'\1')
+        end
+      end
       i18n_lvl -= line.count('}') # FIXME: dirty, does not handle inline
       i18n_block_lang = false if i18n_lvl <= 0 # closing }
 
@@ -326,7 +333,8 @@ files.each do |file|
       i18n_block = true
       i18n_lvl += line.count('{')
 
-      i18n_vars[Regexp.last_match[1]] = {
+      i18n_vars << {
+        val: Regexp.last_match[1],
         name: Regexp.last_match[2],
         line: line.dup,
         lineno: $lineno,
@@ -342,15 +350,15 @@ files.each do |file|
         content << i18n_head.gsub(LANG[:en],LANG[lang.to_sym])
         content << "\r\n"
 
-        i18n_vars.each do |key,val|
+        i18n_vars.each do |var|
           # use the cache if possible
-          name = val[:name].gsub(/"([^"]+)"/,'\1')
-          $logger.info("  Translate #{name.inspect} (l.#{val[:lineno]})")
+          name = var[:name].gsub(/"([^"]+)"/,'\1')
+          $logger.info("  Translate #{name.inspect} (l.#{var[:lineno]})")
           translations[name] = translate(name,lang) unless translations[name]
           errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})") \
             unless translations[name]
 
-          content << val[:line].gsub(
+          content << var[:line].gsub(
             /"#{Regexp.escape(name)}"/,
             "\"#{translations[name]||''}\""
           )
@@ -366,6 +374,11 @@ files.each do |file|
         if !i18n_block_lang and !overwrite
       i18n_block_lang = true
       i18n_lvl += line.count('{')
+      if read_existing and line =~ R_RAIDCORE_I18N_V2
+        val,name = Regexp.last_match[1..2]
+        translations[val.gsub(/"([^"]+)"/,'\1')] =
+          name.gsub(/"([^"]+)"/,'\1')
+      end
       i18n_lvl -= line.count('}') # FIXME: dirty, does not handle inline
       i18n_block_lang = false if i18n_lvl <= 0 # closing }
 

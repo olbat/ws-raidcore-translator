@@ -56,6 +56,42 @@ $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
     raidcore-translator i18n_v2 -l fr -t /src/example-fr.json -v /src/Modules
 ```
 
+### Read existing translation and dump them (1)
+```
+$ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
+    raidcore-translator i18n_v1 -l de -r -o /src/dump-de.json -v /src/Modules
+```
+
+### Read existing translations and translate (2)
+```
+$ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
+    raidcore-translator i18n_v2 -l fr -rdnN -o /src/fr.json /src/Modules
+$ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
+    raidcore-translator i18n_v2 -l fr -t /src/fr.json /src/Modules
+```
+
+### Read existing translations (1) and translate (2)
+```
+$ git submodule init
+$ git submodule update
+
+$ cd Raidcore
+$ git fetch origin translation2
+$ git checkout FETCH_HEAD
+$ cd ..
+
+$ docker run -v $(pwd):/src/ olbat/ws-raidcore-translator \
+    raidcore-translator i18n_v1 -l de -rdnN -o /src/de.json /src/Raidcore/Modules
+
+$ cd Raidcore
+$ git fetch origin review/translation
+$ git checkout FETCH_HEAD
+$ cd ..
+
+$ docker run -v $(pwd):/src/ olbat/ws-raidcore-translator \
+    raidcore-translator i18n_v2 -l de -t /src/de.json /src/Raidcore/Modules
+```
+
 ### Generate rewrite dumps for every Raidcore modules
 ```
 $ git submodule init
@@ -104,7 +140,6 @@ All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 ...
 ```
 
-
 ## Usage
 ```
 usage: raidcore-translator <convert|i18n_v1|i18n_v2> [opts] <file1> <file2> ... <fileN>
@@ -114,7 +149,8 @@ usage: raidcore-translator <convert|i18n_v1|i18n_v2> [opts] <file1> <file2> ... 
     -l, --lang NAME                  The output language (default: fr)
     -n, --noop                       Do not do not write translations in their files
     -N, --no-network                 Do not download any translations from the network
-    -f, --[no-]force                 Overwrite previous translations
+    -O, --[no-]overwrite-existing    Overwrite existing translations
+    -r, --[no-]read-existing         Read existing translations
     -o, --output FILE                Dump data in a file
     -t, --translation-file FILE      Load translations from a file
     -D, --debug                      Debug mode
