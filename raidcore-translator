@@ -184,7 +184,7 @@ optparse = OptionParser.new(USAGE) do |op|
     overwrite = f
   end
   op.on('-r','--[no-]read-existing','Read existing translations') do |r|
-    read = r
+    read_existing = r
   end
   op.on('-o','--output FILE','Dump data in a file') do |f|
     ofile = f
@@ -313,8 +313,8 @@ files.each do |file|
       i18n_lvl += line.count('{')
       if read_existing and line =~ R_RAIDCORE_I18N_V1
         val,name = Regexp.last_match[1..2]
-        if var = i18n_vars.find{|v| v[:val] == val}
-          translations[var[:name].gsub(/"([^"]+)"/,'\1')] =
+        if va = i18n_vars.find{|v| v[:val] == val}
+          translations[va[:name].gsub(/"([^"]+)"/,'\1')] =
             name.gsub(/"([^"]+)"/,'\1')
         end
       end
