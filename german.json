@@ -8,7 +8,7 @@
   "MARKER West": "W",
   "MARKER west": "W",
 
-  /* Translations from NielsH/Raidcore/translation2 */
+  /* Translations from NielsH/Raidcore/translation2 and master */
   "Module %s loaded": "Modul %s geladen",
   "Phage Maw": "Phagenschlund",
   "Detonation Bomb": "Sprengbombe",
@@ -19,13 +19,15 @@
   "BOOOM !": "BOOOM !",
   "Phage Maw begins charging an orbital strike": "Phagenschlund beginnt einen Orbitalschlag aufzuladen",
   "KNOCKBACK": "RÜCKSTOß",
+  "KNOCKBACK !!": "RÜCKSTOß !!!",
   "KNOCKBACK !!!": "RÜCKSTOß !!!",
   "SHOCKWAVE": "SCHOCKWELLE",
   "BEAM": "LASER",
+  "BEAM !!": "LASER !!",
   "LITTLE BOMB": "KLEINE BOMBE",
   "LITTLE BOMB on YOU !!!": "KLEINE BOMBE auf DIR !!!",
   "BIG BOMB on YOU !!!": "GROßE BOMBE auf DIR !!!",
-  "Experiment X%-89 has placed a bomb": "Experiment X%-89 hat eine Bombe auf",
+  "Experiment X-89 has placed a bomb": "Experiment X%-89 hat eine Bombe auf (.*)!",
   "Resounding Shout": "Widerhallender Schrei",
   "Repugnant Spew": "Widerliches Erbrochenes",
   "Shattering Shockwave": "Zerschmetternde Schockwelle",
