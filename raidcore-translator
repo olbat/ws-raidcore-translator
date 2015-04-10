@@ -298,7 +298,7 @@ files.each do |file|
               line.gsub!(/"#{Regexp.escape(name)}"/,"\"#{translations[name]}\"")
               comments << "\"#{name}\""
             else
-              comments << "TODO: translation missing (\"#{name}\") !!!!"
+              comments << "TODO: #{SLANG[lang.to_sym]} translation missing (\"#{name}\") !!!!"
             end
           end
           comment = comments.join(', ')
@@ -362,7 +362,7 @@ files.each do |file|
             /"#{Regexp.escape(name)}"/,
             "\"#{translations[name]||''}\""
           )
-          content << "\t-- TODO: translation missing (\"#{name}\") !!!!" \
+          content << "\t-- TODO: #{SLANG[lang.to_sym]} translation missing (\"#{name}\") !!!!" \
             if comm and !translations[name]
           content << "\r\n"
         end
@@ -436,7 +436,7 @@ files.each do |file|
               /(=\s*)"[^"]+"/,
               "\\1\"#{translations[name]||name}\""
             )
-            content << "\t-- TODO: translation missing !!!!" \
+            content << "\t-- TODO: #{SLANG[lang.to_sym]} translation missing !!!!" \
               if comm and !translations[name]
           else
             content << var[:line]
