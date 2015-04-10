@@ -101,7 +101,7 @@ def self.id(name)
   return if $nonet
   begin
     doc_search = Nokogiri::HTML(open(api_search_url(name)))
-    sleep 0.3
+    sleep 0.5
   rescue Exception => e
     abort "Cannot fetch #{api_search_url(name,false)}: #{e.message}"
   end
@@ -395,6 +395,7 @@ files.each do |file|
 
       if line =~ R_RAIDCORE_I18N_V2
         i18n_vars << {
+          match: true,
           val: Regexp.last_match[1],
           name: Regexp.last_match[2],
           line: line.dup,
@@ -402,6 +403,7 @@ files.each do |file|
         }
       elsif i18n_block
         i18n_vars << {
+          match: false,
           line: line.dup,
           lineno: $lineno,
         }
@@ -422,13 +424,21 @@ files.each do |file|
 
         i18n_vars.each do |var|
           # use the cache if possible
-          if var[:name]
-            name = var[:name].gsub(/"([^"]+)"/,'\1')
+          if var[:match]
+            # translate using the hash key
+            name = var[:val].gsub(/"([^"]+)"/,'\1')
             $logger.info("  Translate #{name.inspect} (l.#{var[:lineno]})")
             translations[name] = translate(name,lang) unless translations[name]
 
+            unless translations[name] # retry, translate using the hash value
+              name = var[:name].gsub(/"([^"]+)"/,'\1')
+              $logger.info("  Translate #{name.inspect} (l.#{var[:lineno]})")
+              translations[name] = translate(name,lang) unless translations[name]
+            end
+
             unless translations[name]
-              errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})")
+              errmsg("No reference for '#{name}'"\
+                "(see #{api_search_url(name,false)})")
               content << '--' if comm
             end
 
