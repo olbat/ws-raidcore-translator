@@ -1,4 +1,13 @@
 {
+  "MARKER North": "N",
+  "MARKER north": "N",
+  "MARKER South": "S",
+  "MARKER south": "S",
+  "MARKER East": "O",
+  "MARKER east": "O",
+  "MARKER West": "W",
+  "MARKER west": "W",
+
   /* Translations from NielsH/Raidcore/translation2 */
   "Module %s loaded": "Modul %s geladen",
   "Phage Maw": "Phagenschlund",

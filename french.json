@@ -3,6 +3,10 @@
   "Infinite Generator Core" : "Noyau du générateur d'infinité",
   "INVALID SIGNAL. DISCONNECTING" : "SIGNAL INCORRECT.",
   "COMMENCING ENHANCEMENT SEQUENCE" : "DÉBUT DE LA SEQUENCE D'AMÉLIORATION",
+  "MARKER North": "N",
+  "MARKER South": "S",
+  "MARKER East": "E",
+  "MARKER West": "O",
 
   /* Translations from NielsH/Raidcore/master */
   "Avatus": "Avatus",
