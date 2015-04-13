@@ -28,11 +28,13 @@ R_RAIDCORE_CONVERT=%r{(?:
 )}x
 LANG={en:"enUS", fr:"frFR", de:"deDE"}
 SLANG={en: "English", fr: "French", de: "German"}
+SMAPS={en: "Maps", fr: "Cartes", de: "Karte"}
 R_LANG={
   en: /^\s\[\s*"#{LANG[:en]}"\s*\]/,
   fr: /^\s\[\s*"#{LANG[:fr]}"\s*\]/,
   de: /^\s\[\s*"#{LANG[:de]}"\s*\]/,
 }
+R_CREATE_LOCALE=/GeminiLocale:NewLocale\(.+,\s*"#{LANG[:en]}"\s*,.*\)/
 R_REG_LOCALE={
   en: /^[a-z]+:Register#{SLANG[:en]}Locale\(/,
   fr: /^[a-z]+:Register#{SLANG[:fr]}Locale\(/,
@@ -40,6 +42,7 @@ R_REG_LOCALE={
 }
 R_RAIDCORE_I18N_V1=/^\s*(\w+)\s*=\s*(#{R_STR.source})/
 R_RAIDCORE_I18N_V2=/^\s*\[(#{R_STR.source})\]\s*=\s*(#{R_STR.source})/
+R_RAIDCORE_I18N_V3=/^\s*[A-Za-z]+\[(#{R_STR.source})\]\s*=\s*(#{R_STR.source})/
 
 API_SITE='http://wildstar.datminer.com'
 API_SEARCH_URL=File.join(API_SITE,'/search/::QUERY::')
@@ -48,6 +51,11 @@ API_SEARCH_QUERY=File.join(API_SITE,'/modules/core_search/results_ajax.php'\
 XPATH_SEARCH_RESULTS="//div[contains(@class,'search-result-title')]/a[@href]"
 XPATH_RESULT_NAME="//div[contains(@class,'entity-page-header')]//"\
   "span[contains(@class,'name')]"
+XPATH_MAP_LIST={
+  en: "//select[@id='map-select']/optgroup[@label='#{SMAPS[:en]}']/option",
+  fr: "//select[@id='map-select']/optgroup[@label='#{SMAPS[:fr]}']/option",
+  de: "//select[@id='map-select']/optgroup[@label='#{SMAPS[:de]}']/option",
+}
 
 #API_SITE='http://www.jabbithole.com'
 #API_SEARCH_QUERY=File.join(API_SITE,'/search?q=::QUERY::')
@@ -76,6 +84,10 @@ end
 
 def self.api_result_url(id_path,lang)
   URI.encode(File.join(API_SITE,lang,id_path),'[]{}')
+end
+
+def self.api_map_url(lang)
+  File.join(API_SITE,lang,'/maps/10000/World')
 end
 
 def self.select_id(name,links)
@@ -125,7 +137,40 @@ def self.id(name)
   res
 end
 
-def self.translate(name,lang)
+def self.ztranslate(name,lang)
+  return if $nonet
+
+  unless $maps
+    $maps = {}
+    doc_en = doc_lang = nil
+    begin
+      doc_en = Nokogiri::HTML(open(api_map_url('en')))
+      doc_lang = Nokogiri::HTML(open(api_map_url(lang)))
+    rescue Exception => e
+      abort "Cannot fetch #{api_map_url('en')}: #{e.message}"
+    end
+    $maps[:en] = doc_en.xpath(XPATH_MAP_LIST[:en]).inject({}) do |ret,m|
+      ret[m.text.strip] = JSON.parse(m['value'])
+      ret
+    end
+    $logger.debug("Loaded #{$maps[:en].size} maps")
+
+    $maps[lang.to_sym] = doc_lang.xpath(XPATH_MAP_LIST[lang.to_sym]).inject({}) do |ret,m|
+      val = JSON.parse(m['value'])
+      ret[val[0]] = val
+      ret
+    end
+  end
+
+  if map = $maps[:en][name.strip]
+    $maps[lang.to_sym][map[0]][3]
+  else
+    nil
+  end
+end
+
+
+def self.ntranslate(name,lang)
   return if $nonet
   id = id(name)
   return unless id
@@ -148,6 +193,12 @@ def self.translate(name,lang)
   $logger.debug("Translation[#{name}]: #{res.text.inspect}")
 
   res.text
+end
+
+def self.translate(*args)
+  ret = ntranslate(*args)
+  ret = ztranslate(*args) if !ret or ret.empty?
+  ret
 end
 
 
@@ -207,7 +258,7 @@ rescue OptionParser::MissingArgument,OptionParser::InvalidOption => e
 end
 
 abort USAGE if ARGV.size < 2
-abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|i18n_v1|i18n_v2)$/
+abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|i18n_v1|i18n_v2|i18n_v3)$/
 
 
 cmd = ARGV[0].to_sym
@@ -453,6 +504,29 @@ files.each do |file|
           end
           content << "\r\n"
         end
+      end
+    elsif cmd == :i18n_v3 and line =~ R_CREATE_LOCALE
+      line = line.gsub(LANG[:en],LANG[lang.to_sym])
+    elsif cmd == :i18n_v3 and line =~ R_RAIDCORE_I18N_V3
+      match = Regexp.last_match.to_a
+      name = match[1].gsub(/"([^"]+)"/,'\1')
+      $logger.info("  Translate #{name.inspect} (l.#{$lineno})")
+      translations[name] = translate(name,lang) unless translations[name]
+
+      # retry, translate using the hash value
+      if !translations[name] and match[1] != match[2]
+        name = match[2].gsub(/"([^"]+)"/,'\1')
+        $logger.info("  Translate #{name.inspect} (l.#{$lineno})")
+        translations[name] = translate(name,lang)
+      end
+
+      errmsg("No reference for '#{name}' (see #{api_search_url(name,false)})") \
+        unless translations[name]
+
+      line = line.gsub(/(=\s*)"[^"]+"/,"\\1\"#{translations[name]||name}\"")
+      if !translations[name]
+        line = '--' + line if comm
+        comment = "\t-- TODO: #{SLANG[lang.to_sym]} translation missing !!!!"
       end
     end
 

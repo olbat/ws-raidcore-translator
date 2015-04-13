@@ -149,7 +149,7 @@ All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 
 ## Usage
 ```
-usage: raidcore-translator <convert|i18n_v1|i18n_v2> [opts] <file1> <file2> ... <fileN>
+usage: raidcore-translator <convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>
     -h, --help                       Display this screen
     -c, --[no-]comment               Add comments to specify the original names
     -d, --dump                       Generate a JSON dump of translations
@@ -175,6 +175,7 @@ Translations can then exploited two different ways:
 * __convert__: re-write the source code of the add-on to use the translated names
 * __i18n_v1__: translate the source code of the _translation2_ branch of the add-on using internationalization variables (see https://github.com/NielsH/RaidCore/tree/translation2)
 * __i18n_v2__: translate the source code of the _review/translation_ branch of the add-on using internationalization variables (see https://github.com/NielsH/RaidCore/tree/review/translation)
+* __i18n_v3__: translate the source code of the _encounter_registering_ branch of the add-on using internationalization variables (see https://github.com/NielsH/RaidCore/tree/encounter_registering)
 
 
 Since some translations cannot be downloaded from the web (boss messages, ...), it's possible to specify a translation file (JSON Hash, key: english name, value: translated name) to specify missing translations.
