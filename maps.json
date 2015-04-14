@@ -1,0 +1,4466 @@
+{
+  "": [
+    "213",
+    "WorldStory1Main",
+    [
+      "678",
+      "713",
+      "565",
+      "598"
+    ],
+    "",
+    "1080"
+  ],
+  "Abandoned Cache": [
+    "413",
+    "WhitevaleAbandonedCache",
+    [
+      "782",
+      "789",
+      "576",
+      "582"
+    ],
+    "Abandoned Cache",
+    "1006"
+  ],
+  "Abandoned Crowe Mine": [
+    "430",
+    "AlgorocAbandonedCroweMine",
+    [
+      "766",
+      "775",
+      "506",
+      "511"
+    ],
+    "Abandoned Crowe Mine",
+    "1006"
+  ],
+  "Abandoned Eldan Test Lab": [
+    "203",
+    "ExpeditionEldanTestLab",
+    [
+      "676",
+      "687",
+      "589",
+      "597"
+    ],
+    "Abandoned Eldan Test Lab",
+    "1075"
+  ],
+  "Abandoned Exo-Lab Z42": [
+    "257",
+    "BlighthavenAbandonedExoLab",
+    [
+      "714",
+      "729",
+      "499",
+      "508"
+    ],
+    "Abandoned Exo-Lab Z42",
+    "1033"
+  ],
+  "Abandoned Hideout": [
+    "344",
+    "EllevarAbandonedHideout",
+    [
+      "624",
+      "631",
+      "539",
+      "544"
+    ],
+    "Abandoned Hideout",
+    "1008"
+  ],
+  "Abandoned Mine": [
+    "353",
+    "MalgraveAdventureAbandonedMine",
+    [
+      "734",
+      "747",
+      "621",
+      "631"
+    ],
+    "Abandoned Mine",
+    "1017"
+  ],
+  "Abandoned Space Mine": [
+    "68",
+    "ShiphandAsteroidMiningSubzone4",
+    [
+      "670",
+      "679",
+      "594",
+      "600"
+    ],
+    "Abandoned Space Mine",
+    "1038"
+  ],
+  "Abandoned XAS Research Caves": [
+    "409",
+    "WhitevaleAbandonedXASResearchCaves",
+    [
+      "736",
+      "751",
+      "582",
+      "594"
+    ],
+    "Abandoned XAS Research Caves",
+    "1006"
+  ],
+  "Algoroc": [
+    "17",
+    "Algoroc",
+    [
+      "728",
+      "789",
+      "496",
+      "535"
+    ],
+    "Algoroc",
+    "1006"
+  ],
+  "Algoroc Adventure": [
+    "34",
+    "AlgorocAdventure",
+    [
+      "750",
+      "797",
+      "517",
+      "536"
+    ],
+    "Algoroc Adventure",
+    "1025"
+  ],
+  "Algoroc Neighborhood": [
+    "29",
+    "AlgorocNeighborhood",
+    [
+      "40",
+      "85",
+      "102",
+      "153"
+    ],
+    "Algoroc Neighborhood",
+    "1020"
+  ],
+  "Alpha Complex": [
+    "76",
+    "FarsideAlphaComplex",
+    [
+      "728",
+      "763",
+      "549",
+      "579"
+    ],
+    "Alpha Complex",
+    "1019"
+  ],
+  "Annihilator Control Room 14A": [
+    "436",
+    "AlgorocAnnihilatorControlRoom14A",
+    [
+      "780",
+      "793",
+      "509",
+      "520"
+    ],
+    "Annihilator Control Room 14A",
+    "1006"
+  ],
+  "Apex-9": [
+    "48",
+    "HalonRingIsland2",
+    [
+      "424",
+      "505",
+      "429",
+      "489"
+    ],
+    "Apex-9",
+    "1009"
+  ],
+  "Arachnotorium": [
+    "447",
+    "CelestionArachnotorium",
+    [
+      "728",
+      "739",
+      "560",
+      "569"
+    ],
+    "Arachnotorium",
+    "1006"
+  ],
+  "Asteroid 3C48": [
+    "50",
+    "FarsideAsteroid",
+    [
+      "882",
+      "895",
+      "474",
+      "493"
+    ],
+    "Asteroid 3C48",
+    "1019"
+  ],
+  "Asteroid DU-23": [
+    "94",
+    "ShiphandRageLogicAsteroid",
+    [
+      "668",
+      "697",
+      "581",
+      "599"
+    ],
+    "Asteroid DU-23",
+    "1051"
+  ],
+  "Asteroid M-13": [
+    "65",
+    "ShiphandAsteroidMiningSubzone2",
+    [
+      "668",
+      "687",
+      "579",
+      "598"
+    ],
+    "Asteroid M-13",
+    "1038"
+  ],
+  "Augmentation Chamber": [
+    "449",
+    "CelestionAugmentationChamber",
+    [
+      "740",
+      "743",
+      "564",
+      "566"
+    ],
+    "Augmentation Chamber",
+    "1006"
+  ],
+  "Auroria": [
+    "6",
+    "Auroria",
+    [
+      "622",
+      "679",
+      "543",
+      "593"
+    ],
+    "Auroria",
+    "1008"
+  ],
+  "Avra's Lair": [
+    "414",
+    "WhitevaleAvrasLair",
+    [
+      "770",
+      "781",
+      "566",
+      "573"
+    ],
+    "Avra's Lair",
+    "1006"
+  ],
+  "Axiom's Control Room": [
+    "97",
+    "ShiphandRageLogicAxiomControlRoom",
+    [
+      "674",
+      "681",
+      "587",
+      "593"
+    ],
+    "Axiom's Control Room",
+    "1051"
+  ],
+  "Basic Confrontation Zone": [
+    "471",
+    "ProtogamesAcademyBasicConfrontationZone",
+    [
+      "164",
+      "185",
+      "61",
+      "79"
+    ],
+    "Basic Confrontation Zone",
+    "1090"
+  ],
+  "Beastbone Cave": [
+    "385",
+    "DeraduneBeastboneCave",
+    [
+      "568",
+      "577",
+      "585",
+      "591"
+    ],
+    "Beastbone Cave",
+    "1008"
+  ],
+  "Bio-Dome 3": [
+    "74",
+    "FarsideBiodome3",
+    [
+      "690",
+      "739",
+      "539",
+      "588"
+    ],
+    "Bio-Dome 3",
+    "1019"
+  ],
+  "Bio-Dome 4": [
+    "75",
+    "FarsideBioDome4",
+    [
+      "750",
+      "801",
+      "538",
+      "587"
+    ],
+    "Bio-Dome 4",
+    "1019"
+  ],
+  "Bio-Mech Complex AH47 Level 1": [
+    "341",
+    "EllevarBioMech1",
+    [
+      "616",
+      "627",
+      "542",
+      "551"
+    ],
+    "Bio-Mech Complex AH47 Level 1",
+    "1008"
+  ],
+  "Bio-Mech Complex AH47 Level 2": [
+    "342",
+    "EllevarBioMech2",
+    [
+      "616",
+      "627",
+      "542",
+      "551"
+    ],
+    "Bio-Mech Complex AH47 Level 2",
+    "1008"
+  ],
+  "Bio-Mech Facility": [
+    "306",
+    "WesternGrimvaultBioMechFacility",
+    [
+      "640",
+      "683",
+      "497",
+      "536"
+    ],
+    "Bio-Mech Facility",
+    "1033"
+  ],
+  "Biomatics Chamber": [
+    "280",
+    "ShiphandLevel6Gronyx",
+    [
+      "890",
+      "905",
+      "474",
+      "484"
+    ],
+    "Biomatics Chamber",
+    "1083"
+  ],
+  "Biometrics Facility Gamma": [
+    "313",
+    "WilderrunExoLab13",
+    [
+      "750",
+      "765",
+      "538",
+      "550"
+    ],
+    "Biometrics Facility Gamma",
+    "1008"
+  ],
+  "Blackheart Hollow": [
+    "367",
+    "AuroriaBlackheartHollow",
+    [
+      "638",
+      "653",
+      "578",
+      "590"
+    ],
+    "Blackheart Hollow",
+    "1008"
+  ],
+  "Blackpaw's Den": [
+    "429",
+    "AlgorocBlackpawsDen",
+    [
+      "768",
+      "775",
+      "508",
+      "512"
+    ],
+    "Blackpaw's Den",
+    "1006"
+  ],
+  "Bladesworn Caverns": [
+    "312",
+    "WilderrunBladeswornCaverns",
+    [
+      "712",
+      "725",
+      "524",
+      "535"
+    ],
+    "Bladesworn Caverns",
+    "1008"
+  ],
+  "Blighted Tunnel": [
+    "396",
+    "EverstarGroveBlightedTunnel",
+    [
+      "666",
+      "681",
+      "519",
+      "531"
+    ],
+    "Blighted Tunnel",
+    "1006"
+  ],
+  "Blighthaven": [
+    "71",
+    "NorthernGrimvault",
+    [
+      "694",
+      "773",
+      "461",
+      "511"
+    ],
+    "Blighthaven",
+    "1033"
+  ],
+  "Blightmuck Abscess": [
+    "236",
+    "HalonRingBCBlightmuckAbscess",
+    [
+      "400",
+      "413",
+      "490",
+      "500"
+    ],
+    "Blightmuck Abscess",
+    "1009"
+  ],
+  "Boon of Hydris": [
+    "340",
+    "EllevarBoonOfHydris",
+    [
+      "628",
+      "635",
+      "536",
+      "541"
+    ],
+    "Boon of Hydris",
+    "1008"
+  ],
+  "Borellian Cluster": [
+    "8",
+    "halonring",
+    [
+      "384",
+      "449",
+      "474",
+      "525"
+    ],
+    "Borellian Cluster",
+    "1009"
+  ],
+  "Bristlebane Burrows": [
+    "404",
+    "GalerasBristlebaneBurrows",
+    [
+      "788",
+      "797",
+      "531",
+      "539"
+    ],
+    "Bristlebane Burrows",
+    "1006"
+  ],
+  "Burk's Claim": [
+    "426",
+    "AlgorocBurksClaim",
+    [
+      "758",
+      "767",
+      "517",
+      "523"
+    ],
+    "Burk's Claim",
+    "1006"
+  ],
+  "Capt'n Krull's Folly": [
+    "235",
+    "HalonRingBCCaptainKrull",
+    [
+      "414",
+      "421",
+      "482",
+      "487"
+    ],
+    "Capt'n Krull's Folly",
+    "1009"
+  ],
+  "Celestial Passage": [
+    "438",
+    "CelestionCelestialPassage",
+    [
+      "698",
+      "705",
+      "532",
+      "537"
+    ],
+    "Celestial Passage",
+    "1006"
+  ],
+  "Celestion": [
+    "5",
+    "Celestion",
+    [
+      "690",
+      "765",
+      "525",
+      "571"
+    ],
+    "Celestion",
+    "1006"
+  ],
+  "Chamber of Aradel": [
+    "245",
+    "HalonRingBCChamberofAradelDom",
+    [
+      "386",
+      "397",
+      "452",
+      "462"
+    ],
+    "Chamber of Aradel",
+    "1009"
+  ],
+  "Chamber of Enoch": [
+    "250",
+    "HalonRingBCChamberofEnochDom",
+    [
+      "386",
+      "397",
+      "452",
+      "462"
+    ],
+    "Chamber of Enoch",
+    "1009"
+  ],
+  "Chamber of Eshia": [
+    "246",
+    "HalonRingBCChamberofEshiaDom",
+    [
+      "386",
+      "397",
+      "452",
+      "462"
+    ],
+    "Chamber of Eshia",
+    "1009"
+  ],
+  "Chamber of Madoc": [
+    "247",
+    "HalonRingBCChamberofMadocDom",
+    [
+      "386",
+      "397",
+      "452",
+      "462"
+    ],
+    "Chamber of Madoc",
+    "1009"
+  ],
+  "Chamber of Nuriel": [
+    "248",
+    "HalonRingBCChamberofNurielDom",
+    [
+      "386",
+      "397",
+      "452",
+      "462"
+    ],
+    "Chamber of Nuriel",
+    "1009"
+  ],
+  "Chamber of Primal Air": [
+    "265",
+    "BlighthavenChamberAir",
+    [
+      "716",
+      "731",
+      "453",
+      "464"
+    ],
+    "Chamber of Primal Air",
+    "1033"
+  ],
+  "Chamber of Primal Earth": [
+    "268",
+    "BlighthavenChamberEarth",
+    [
+      "738",
+      "753",
+      "454",
+      "465"
+    ],
+    "Chamber of Primal Earth",
+    "1033"
+  ],
+  "Chamber of Primal Fire": [
+    "266",
+    "BlighthavenChamberFire",
+    [
+      "722",
+      "737",
+      "459",
+      "470"
+    ],
+    "Chamber of Primal Fire",
+    "1033"
+  ],
+  "Chamber of Primal Life": [
+    "269",
+    "BlighthavenChamberLife",
+    [
+      "734",
+      "749",
+      "449",
+      "460"
+    ],
+    "Chamber of Primal Life",
+    "1033"
+  ],
+  "Chamber of Primal Logic": [
+    "264",
+    "BlighthavenChamberLogic",
+    [
+      "722",
+      "737",
+      "448",
+      "459"
+    ],
+    "Chamber of Primal Logic",
+    "1033"
+  ],
+  "Chamber of Primal Water": [
+    "267",
+    "BlighthavenChamberWater",
+    [
+      "732",
+      "747",
+      "459",
+      "470"
+    ],
+    "Chamber of Primal Water",
+    "1033"
+  ],
+  "Chamber of the Entity": [
+    "251",
+    "HalonRingBCChamberoftheEntityDom",
+    [
+      "386",
+      "397",
+      "452",
+      "462"
+    ],
+    "Chamber of the Entity",
+    "1009"
+  ],
+  "Chamber of Yuria": [
+    "249",
+    "HalonRingBCChamberofYuriaDom",
+    [
+      "386",
+      "397",
+      "452",
+      "462"
+    ],
+    "Chamber of Yuria",
+    "1009"
+  ],
+  "Coldburrow Cavern": [
+    "220",
+    "NorthernWastesColdburrowCavern",
+    [
+      "98",
+      "109",
+      "59",
+      "66"
+    ],
+    "Coldburrow Cavern",
+    "1032"
+  ],
+  "Containment Facility R-12": [
+    "322",
+    "MalgraveContainmentR12Ex",
+    [
+      "710",
+      "721",
+      "624",
+      "633"
+    ],
+    "Containment Facility R-12",
+    "1033"
+  ],
+  "Contemplations on Perspective Alpha": [
+    "111",
+    "DatascapeEscherRoom01",
+    [
+      "212",
+      "235",
+      "290",
+      "309"
+    ],
+    "Contemplations on Perspective Alpha",
+    "1052"
+  ],
+  "Contemplations on Perspective Beta": [
+    "113",
+    "DatascapeEscherRoom03",
+    [
+      "214",
+      "243",
+      "349",
+      "373"
+    ],
+    "Contemplations on Perspective Beta",
+    "1052"
+  ],
+  "Contemplations on Perspective Delta": [
+    "112",
+    "DatascapeEscherRoom02",
+    [
+      "212",
+      "235",
+      "326",
+      "344"
+    ],
+    "Contemplations on Perspective Delta",
+    "1052"
+  ],
+  "Coralus": [
+    "89",
+    "Coralus",
+    [
+      "618",
+      "719",
+      "592",
+      "679"
+    ],
+    "Coralus",
+    "1049"
+  ],
+  "Corrupted Assembly Corridor": [
+    "115",
+    "DatascapeBlackAndWhite",
+    [
+      "766",
+      "779",
+      "281",
+      "293"
+    ],
+    "Corrupted Assembly Corridor",
+    "1052"
+  ],
+  "Corrupted Exo-Lab": [
+    "284",
+    "TheDefileBlackFocusEvacuationHub",
+    [
+      "776",
+      "795",
+      "496",
+      "510"
+    ],
+    "Corrupted Exo-Lab",
+    "1033"
+  ],
+  "Cragroach Cavern": [
+    "366",
+    "AuroriaCragroachCavern",
+    [
+      "642",
+      "651",
+      "553",
+      "561"
+    ],
+    "Cragroach Cavern",
+    "1008"
+  ],
+  "Crater of Carnage": [
+    "226",
+    "HalongRingBCCraterofCarnage",
+    [
+      "410",
+      "419",
+      "491",
+      "495"
+    ],
+    "Crater of Carnage",
+    "1009"
+  ],
+  "Creeping Caverns": [
+    "275",
+    "SouthernGrimvaultCreepingCaverns",
+    [
+      "716",
+      "731",
+      "565",
+      "577"
+    ],
+    "Creeping Caverns",
+    "1033"
+  ],
+  "Crimelords of Whitevale": [
+    "35",
+    "WhitevaleAdventure",
+    [
+      "764",
+      "791",
+      "570",
+      "589"
+    ],
+    "Crimelords of Whitevale",
+    "1026"
+  ],
+  "Crimson Badlands": [
+    "131",
+    "PocketCapCrimsonIsle",
+    [
+      "192",
+      "235",
+      "74",
+      "106"
+    ],
+    "Crimson Badlands",
+    "1061"
+  ],
+  "Crimson Command": [
+    "331",
+    "CrimsonIsleBloodstoneCanyon",
+    [
+      "518",
+      "525",
+      "575",
+      "579"
+    ],
+    "Crimson Command",
+    "1008"
+  ],
+  "Crimson Hook Cave": [
+    "378",
+    "DeraduneCrimsonHookCave",
+    [
+      "584",
+      "589",
+      "551",
+      "555"
+    ],
+    "Crimson Hook Cave",
+    "1008"
+  ],
+  "Crimson Isle": [
+    "12",
+    "CrimsonIsle",
+    [
+      "500",
+      "543",
+      "563",
+      "596"
+    ],
+    "Crimson Isle",
+    "1008"
+  ],
+  "Crimson Legion Control Room": [
+    "402",
+    "GalerasCrimsonLegionControlRoom",
+    [
+      "792",
+      "799",
+      "530",
+      "536"
+    ],
+    "Crimson Legion Control Room",
+    "1006"
+  ],
+  "Crowe Family Claim": [
+    "431",
+    "AlgorocCrowFamilyClaim",
+    [
+      "762",
+      "771",
+      "504",
+      "509"
+    ],
+    "Crowe Family Claim",
+    "1006"
+  ],
+  "Crushstone Cavern": [
+    "319",
+    "WilderrunCrushstoneCavern",
+    [
+      "746",
+      "757",
+      "499",
+      "508"
+    ],
+    "Crushstone Cavern",
+    "1008"
+  ],
+  "Crystal Caverns": [
+    "233",
+    "HalonRingBCCrystalCavernsDominion",
+    [
+      "424",
+      "437",
+      "499",
+      "510"
+    ],
+    "Crystal Caverns",
+    "1009"
+  ],
+  "Cuboar Coterie": [
+    "163",
+    "UltimateProtogames003",
+    [
+      "232",
+      "247",
+      "391",
+      "401"
+    ],
+    "Cuboar Coterie",
+    "1069"
+  ],
+  "Darkice Cave": [
+    "410",
+    "WhitevaleDarkiceCave",
+    [
+      "760",
+      "769",
+      "567",
+      "574"
+    ],
+    "Darkice Cave",
+    "1006"
+  ],
+  "Darkloam Hole": [
+    "443",
+    "CelestionDarkloamHole",
+    [
+      "714",
+      "723",
+      "546",
+      "553"
+    ],
+    "Darkloam Hole",
+    "1006"
+  ],
+  "Datascape Logic Gate": [
+    "216",
+    "WorldStory1Datascape",
+    [
+      "772",
+      "783",
+      "579",
+      "588"
+    ],
+    "Datascape Logic Gate",
+    "1080"
+  ],
+  "Datascape Synaptics Core": [
+    "215",
+    "WorldStory1Motherboard",
+    [
+      "686",
+      "697",
+      "564",
+      "572"
+    ],
+    "Datascape Synaptics Core",
+    "1080"
+  ],
+  "Deathbringer's Tomb": [
+    "379",
+    "DeraduneDeathbringersTomb",
+    [
+      "568",
+      "583",
+      "592",
+      "604"
+    ],
+    "Deathbringer's Tomb",
+    "1008"
+  ],
+  "Decontamination Room": [
+    "259",
+    "BlighthavenDecontaminationRoom",
+    [
+      "716",
+      "725",
+      "495",
+      "501"
+    ],
+    "Decontamination Room",
+    "1033"
+  ],
+  "Decrepit Exo-Lab Y23": [
+    "254",
+    "BlighthavenDecrepitExoLab",
+    [
+      "714",
+      "729",
+      "488",
+      "496"
+    ],
+    "Decrepit Exo-Lab Y23",
+    "1033"
+  ],
+  "Demonclaw's Lair": [
+    "424",
+    "AlgorocDemonclawsLair",
+    [
+      "746",
+      "753",
+      "520",
+      "524"
+    ],
+    "Demonclaw's Lair",
+    "1006"
+  ],
+  "Den of Courage": [
+    "445",
+    "CelestionDenofCourage",
+    [
+      "734",
+      "743",
+      "546",
+      "552"
+    ],
+    "Den of Courage",
+    "1006"
+  ],
+  "Department 5150": [
+    "294",
+    "WesternGrimvaultDepartment5150",
+    [
+      "698",
+      "707",
+      "519",
+      "526"
+    ],
+    "Department 5150",
+    "1033"
+  ],
+  "Department YYZ": [
+    "293",
+    "WesternGrimvaultDepartmentYYZ",
+    [
+      "698",
+      "707",
+      "516",
+      "523"
+    ],
+    "Department YYZ",
+    "1033"
+  ],
+  "Deradune": [
+    "15",
+    "Deradune",
+    [
+      "548",
+      "605",
+      "553",
+      "603"
+    ],
+    "Deradune",
+    "1008"
+  ],
+  "Derelict Silo E23": [
+    "46",
+    "FarsideDerilectSilo",
+    [
+      "776",
+      "823",
+      "363",
+      "403"
+    ],
+    "Derelict Silo E23",
+    "1019"
+  ],
+  "Destiny Cryo-Recovery": [
+    "207",
+    "ShiphandDominionArkshipCryo",
+    [
+      "690",
+      "707",
+      "604",
+      "635"
+    ],
+    "Destiny Cryo-Recovery",
+    "1076"
+  ],
+  "Destiny Shuttle Bay": [
+    "208",
+    "ShiphandDominionArkshipShuttle",
+    [
+      "652",
+      "667",
+      "599",
+      "616"
+    ],
+    "Destiny Shuttle Bay",
+    "1076"
+  ],
+  "Diluvian Depths": [
+    "339",
+    "EllevarDiluvianDepths",
+    [
+      "660",
+      "675",
+      "522",
+      "533"
+    ],
+    "Diluvian Depths",
+    "1008"
+  ],
+  "DREDplex: Skyhammer": [
+    "423",
+    "AlgorocDREDplexSkyhammer",
+    [
+      "750",
+      "763",
+      "521",
+      "530"
+    ],
+    "DREDplex: Skyhammer",
+    "1006"
+  ],
+  "Drybore Hollow": [
+    "288",
+    "CrimsonBadlandsDryboreHollow",
+    [
+      "218",
+      "231",
+      "81",
+      "91"
+    ],
+    "Drybore Hollow",
+    "1061"
+  ],
+  "Duskfall Caverns": [
+    "428",
+    "AlgorocDuskfallCaverns",
+    [
+      "766",
+      "779",
+      "505",
+      "517"
+    ],
+    "Duskfall Caverns",
+    "1006"
+  ],
+  "Earthen Biomes": [
+    "108",
+    "DatascapeEarthRoom",
+    [
+      "740",
+      "761",
+      "643",
+      "660"
+    ],
+    "Earthen Biomes",
+    "1052"
+  ],
+  "Eastern Embertree": [
+    "441",
+    "CelestionNortheasterEmbertree",
+    [
+      "708",
+      "715",
+      "534",
+      "539"
+    ],
+    "Eastern Embertree",
+    "1006"
+  ],
+  "Eldan Lab": [
+    "346",
+    "EllevarEldanLab",
+    [
+      "646",
+      "659",
+      "521",
+      "531"
+    ],
+    "Eldan Lab",
+    "1008"
+  ],
+  "Elemental Hospital": [
+    "162",
+    "UltimateProtogames002",
+    [
+      "156",
+      "167",
+      "386",
+      "394"
+    ],
+    "Elemental Hospital",
+    "1069"
+  ],
+  "Elemental Vortex Alpha": [
+    "117",
+    "DatascapeDatacoreAlpha",
+    [
+      "380",
+      "389",
+      "911",
+      "918"
+    ],
+    "Elemental Vortex Alpha",
+    "1052"
+  ],
+  "Elemental Vortex Beta": [
+    "118",
+    "DatascapeDatacoreBeta",
+    [
+      "594",
+      "603",
+      "911",
+      "918"
+    ],
+    "Elemental Vortex Beta",
+    "1052"
+  ],
+  "Elemental Vortex Delta": [
+    "119",
+    "DatascapeDatacoreGamma",
+    [
+      "882",
+      "891",
+      "910",
+      "918"
+    ],
+    "Elemental Vortex Delta",
+    "1052"
+  ],
+  "Ellevar": [
+    "7",
+    "Ellevar",
+    [
+      "602",
+      "667",
+      "506",
+      "550"
+    ],
+    "Ellevar",
+    "1008"
+  ],
+  "Ellevar Adventure": [
+    "37",
+    "EllevarAdventure",
+    [
+      "608",
+      "667",
+      "508",
+      "546"
+    ],
+    "Ellevar Adventure",
+    "1028"
+  ],
+  "Employee Cafeteria": [
+    "182",
+    "UltimateProtogames022",
+    [
+      "422",
+      "431",
+      "683",
+      "691"
+    ],
+    "Employee Cafeteria",
+    "1069"
+  ],
+  "Empyreal Caverns": [
+    "255",
+    "BlighthavenEmpyrealCaverns",
+    [
+      "704",
+      "713",
+      "489",
+      "493"
+    ],
+    "Empyreal Caverns",
+    "1033"
+  ],
+  "Engineering Sublevel Theta": [
+    "59",
+    "LevianBayStarComm3",
+    [
+      "640",
+      "647",
+      "476",
+      "480"
+    ],
+    "Engineering Sublevel Theta",
+    "1008"
+  ],
+  "Enigma Chamber": [
+    "459",
+    "IlliumEnigmaChamber",
+    [
+      "614",
+      "617",
+      "557",
+      "559"
+    ],
+    "Enigma Chamber",
+    "1008"
+  ],
+  "Enigma Chamber Reception": [
+    "458",
+    "IlliumEnigmaChamberReception",
+    [
+      "616",
+      "619",
+      "558",
+      "560"
+    ],
+    "Enigma Chamber Reception",
+    "1008"
+  ],
+  "Essential Reactor Room": [
+    "451",
+    "CelestionEssentialReactorRoom",
+    [
+      "732",
+      "739",
+      "559",
+      "564"
+    ],
+    "Essential Reactor Room",
+    "1006"
+  ],
+  "Ethereal Caverns": [
+    "258",
+    "BlighthavenEtherealCaverns",
+    [
+      "704",
+      "713",
+      "501",
+      "505"
+    ],
+    "Ethereal Caverns",
+    "1033"
+  ],
+  "Ethereal Cavity": [
+    "273",
+    "SouthernGrimvaultEtherealCavity",
+    [
+      "716",
+      "733",
+      "589",
+      "604"
+    ],
+    "Ethereal Cavity",
+    "1033"
+  ],
+  "Ethereal Hollow": [
+    "274",
+    "SouthernGrimvaultEtherealHollow",
+    [
+      "706",
+      "723",
+      "585",
+      "600"
+    ],
+    "Ethereal Hollow",
+    "1033"
+  ],
+  "Everstar Grove": [
+    "27",
+    "EverstarGrove",
+    [
+      "656",
+      "701",
+      "517",
+      "555"
+    ],
+    "Everstar Grove",
+    "1006"
+  ],
+  "Everstar Passage": [
+    "397",
+    "EverstarGroveEverstarPassage",
+    [
+      "692",
+      "701",
+      "529",
+      "535"
+    ],
+    "Everstar Passage",
+    "1006"
+  ],
+  "Exo-Lab 22": [
+    "333",
+    "CrimsonIsleExoLab22",
+    [
+      "532",
+      "541",
+      "570",
+      "577"
+    ],
+    "Exo-Lab 22",
+    "1008"
+  ],
+  "Exo-Lab 4": [
+    "399",
+    "GalerasExoLab4",
+    [
+      "770",
+      "777",
+      "537",
+      "542"
+    ],
+    "Exo-Lab 4",
+    "1006"
+  ],
+  "Exo-Lab 71: The Arboretum": [
+    "395",
+    "EverstarGroveExoLab71Arboretum",
+    [
+      "674",
+      "685",
+      "529",
+      "539"
+    ],
+    "Exo-Lab 71: The Arboretum",
+    "1006"
+  ],
+  "Exo-Lab 729": [
+    "223",
+    "NorthernWildsExoLab729",
+    [
+      "762",
+      "773",
+      "479",
+      "486"
+    ],
+    "Exo-Lab 729",
+    "1006"
+  ],
+  "Exo-Lab 78": [
+    "388",
+    "DeraduneExoLab78",
+    [
+      "562",
+      "577",
+      "549",
+      "561"
+    ],
+    "Exo-Lab 78",
+    "1008"
+  ],
+  "Exo-Lab 79": [
+    "389",
+    "DeraduneExoLab79",
+    [
+      "572",
+      "589",
+      "552",
+      "564"
+    ],
+    "Exo-Lab 79",
+    "1008"
+  ],
+  "Exo-Lab 83": [
+    "403",
+    "GalerasExoLab83",
+    [
+      "788",
+      "793",
+      "518",
+      "520"
+    ],
+    "Exo-Lab 83",
+    "1006"
+  ],
+  "Exo-Lab A37": [
+    "394",
+    "DeraduneExoLabA37Augmentation",
+    [
+      "568",
+      "585",
+      "592",
+      "606"
+    ],
+    "Exo-Lab A37",
+    "1008"
+  ],
+  "Exo-Lab BM15": [
+    "314",
+    "WilderrunExoLabBM15",
+    [
+      "744",
+      "749",
+      "531",
+      "534"
+    ],
+    "Exo-Lab BM15",
+    "1008"
+  ],
+  "Exo-Lab K58": [
+    "415",
+    "WhitevaleExoLabK58",
+    [
+      "788",
+      "805",
+      "562",
+      "576"
+    ],
+    "Exo-Lab K58",
+    "1006"
+  ],
+  "Exo-Lab Prime": [
+    "137",
+    "DruseraWorldStoryInstance1",
+    [
+      "676",
+      "689",
+      "584",
+      "593"
+    ],
+    "Exo-Lab Prime",
+    "1063"
+  ],
+  "Exo-Lab X1BB": [
+    "326",
+    "MalgraveExoLabX1BB",
+    [
+      "738",
+      "751",
+      "666",
+      "675"
+    ],
+    "Exo-Lab X1BB",
+    "1033"
+  ],
+  "Exo-Lab X39": [
+    "138",
+    "DruseraWorldStoryInstance2",
+    [
+      "676",
+      "689",
+      "587",
+      "597"
+    ],
+    "Exo-Lab X39",
+    "1064"
+  ],
+  "Exo-Lab XC42": [
+    "327",
+    "MalgraveExoLabXC42",
+    [
+      "676",
+      "689",
+      "587",
+      "597"
+    ],
+    "Exo-Lab XC42",
+    "1085"
+  ],
+  "Expedition: Creepy Cave": [
+    "83",
+    "ExpeditionCreeperCave",
+    [
+      "680",
+      "687",
+      "589",
+      "595"
+    ],
+    "Expedition: Creepy Cave",
+    "1046"
+  ],
+  "Expedition: Graylight Grapplefest": [
+    "79",
+    "ExpeditionGraylightGrapplefest",
+    [
+      "678",
+      "687",
+      "590",
+      "596"
+    ],
+    "Expedition: Graylight Grapplefest",
+    "1042"
+  ],
+  "Expedition: Kel Voreth Underforge": [
+    "80",
+    "ExpeditionKelVorethUnderforge",
+    [
+      "674",
+      "689",
+      "590",
+      "601"
+    ],
+    "Expedition: Kel Voreth Underforge",
+    "1043"
+  ],
+  "Expedition: Mayday": [
+    "82",
+    "ExpeditionMayday",
+    [
+      "676",
+      "689",
+      "590",
+      "599"
+    ],
+    "Expedition: Mayday",
+    "1045"
+  ],
+  "Expedition: Spider Tomb": [
+    "84",
+    "ExpeditionSpiderTomb",
+    [
+      "674",
+      "685",
+      "584",
+      "593"
+    ],
+    "Expedition: Spider Tomb",
+    "1047"
+  ],
+  "Expedition: The Melting Pot": [
+    "81",
+    "ExpeditionTheMeltingPot",
+    [
+      "680",
+      "685",
+      "590",
+      "593"
+    ],
+    "Expedition: The Melting Pot",
+    "1044"
+  ],
+  "Farside": [
+    "28",
+    "Farside",
+    [
+      "716",
+      "795",
+      "453",
+      "505"
+    ],
+    "Farside",
+    "1019"
+  ],
+  "Farside Adventure": [
+    "202",
+    "FarsideAdventure",
+    [
+      "750",
+      "785",
+      "473",
+      "501"
+    ],
+    "Farside Adventure",
+    "1074"
+  ],
+  "Feralplain Monitoring Station": [
+    "390",
+    "DeraduneFeralplainMonitoringStation",
+    [
+      "576",
+      "589",
+      "561",
+      "571"
+    ],
+    "Feralplain Monitoring Station",
+    "1008"
+  ],
+  "Fieldclaw Hollow": [
+    "364",
+    "AuroriaFieldclawHollow",
+    [
+      "642",
+      "651",
+      "544",
+      "551"
+    ],
+    "Fieldclaw Hollow",
+    "1008"
+  ],
+  "First Strike Mine": [
+    "432",
+    "AlgorocFirstStrikeMine",
+    [
+      "756",
+      "773",
+      "516",
+      "532"
+    ],
+    "First Strike Mine",
+    "1006"
+  ],
+  "Forgotten Tomb": [
+    "336",
+    "EllevarForgottenTomb",
+    [
+      "632",
+      "635",
+      "531",
+      "533"
+    ],
+    "Forgotten Tomb",
+    "1008"
+  ],
+  "Fortune's Fool": [
+    "418",
+    "WhitevaleFortunesFoolMain",
+    [
+      "760",
+      "767",
+      "584",
+      "589"
+    ],
+    "Fortune's Fool",
+    "1006"
+  ],
+  "Galactic Observer": [
+    "143",
+    "ShiphandDeepSpaceDisappearanceGalacticObserver3",
+    [
+      "654",
+      "669",
+      "604",
+      "614"
+    ],
+    "Galactic Observer",
+    "1060"
+  ],
+  "Galeras": [
+    "16",
+    "Galeras",
+    [
+      "770",
+      "831",
+      "517",
+      "566"
+    ],
+    "Galeras",
+    "1006"
+  ],
+  "Ganther's Mine": [
+    "422",
+    "AlgorocGanthersMine",
+    [
+      "746",
+      "751",
+      "513",
+      "517"
+    ],
+    "Ganther's Mine",
+    "1006"
+  ],
+  "Gauntlet Shuttle": [
+    "133",
+    "ShiphandTheGauntletShuttle",
+    [
+      "692",
+      "695",
+      "581",
+      "583"
+    ],
+    "Gauntlet Shuttle",
+    "1062"
+  ],
+  "Genesis Chamber": [
+    "270",
+    "BlighthavenGenesisChamber",
+    [
+      "728",
+      "743",
+      "429",
+      "439"
+    ],
+    "Genesis Chamber",
+    "1033"
+  ],
+  "Genetic Archives": [
+    "147",
+    "GeneticArchives",
+    [
+      "648",
+      "765",
+      "562",
+      "599"
+    ],
+    "Genetic Archives",
+    "1067"
+  ],
+  "Genetic Archives - Act 1": [
+    "148",
+    "GeneticArchivesAct1",
+    [
+      "648",
+      "693",
+      "567",
+      "605"
+    ],
+    "Genetic Archives - Act 1",
+    "1067"
+  ],
+  "Genetic Archives - Act 2": [
+    "149",
+    "GeneticArchivesAct2",
+    [
+      "714",
+      "769",
+      "559",
+      "606"
+    ],
+    "Genetic Archives - Act 2",
+    "1067"
+  ],
+  "Genetic Archives - Act 3": [
+    "150",
+    "GeneticArchivesAct3",
+    [
+      "732",
+      "749",
+      "581",
+      "596"
+    ],
+    "Genetic Archives - Act 3",
+    "1067"
+  ],
+  "Glacial Fortress": [
+    "109",
+    "DatascapeWaterRoom",
+    [
+      "744",
+      "763",
+      "520",
+      "536"
+    ],
+    "Glacial Fortress",
+    "1052"
+  ],
+  "Goldenhand's Reach": [
+    "224",
+    "HalonRingBCGoldenhandsReach",
+    [
+      "422",
+      "435",
+      "507",
+      "516"
+    ],
+    "Goldenhand's Reach",
+    "1009"
+  ],
+  "Greystone Cavern": [
+    "356",
+    "AuroriaGreystoneCavern",
+    [
+      "626",
+      "637",
+      "570",
+      "580"
+    ],
+    "Greystone Cavern",
+    "1008"
+  ],
+  "Grimbone Tomb": [
+    "434",
+    "AlgorocGrimboneTomb",
+    [
+      "762",
+      "781",
+      "526",
+      "540"
+    ],
+    "Grimbone Tomb",
+    "1006"
+  ],
+  "Grimclaw's Den": [
+    "328",
+    "MalgraveGrimclawsDen",
+    [
+      "742",
+      "745",
+      "644",
+      "646"
+    ],
+    "Grimclaw's Den",
+    "1033"
+  ],
+  "Grimhold's Hope": [
+    "453",
+    "CelestionGrimholdsHope",
+    [
+      "750",
+      "765",
+      "540",
+      "550"
+    ],
+    "Grimhold's Hope",
+    "1006"
+  ],
+  "Grimvoid Dreadvault": [
+    "234",
+    "HalonRingBCGrimvoidDreadvault",
+    [
+      "408",
+      "419",
+      "477",
+      "487"
+    ],
+    "Grimvoid Dreadvault",
+    "1009"
+  ],
+  "Groundswell Tunnels": [
+    "401",
+    "GalerasGroundswellTunnels",
+    [
+      "786",
+      "797",
+      "541",
+      "550"
+    ],
+    "Groundswell Tunnels",
+    "1006"
+  ],
+  "Halls of the Bloodsworn": [
+    "99",
+    "PvPHoldTheLine",
+    [
+      "648",
+      "669",
+      "599",
+      "616"
+    ],
+    "Halls of the Bloodsworn",
+    "1053"
+  ],
+  "Halls of the Infinite Mind": [
+    "105",
+    "DatascapeHallsInfiniteMind",
+    [
+      "678",
+      "689",
+      "584",
+      "593"
+    ],
+    "Halls of the Infinite Mind",
+    "1052"
+  ],
+  "Halon Ring Delta": [
+    "49",
+    "HalonRingIsland3",
+    [
+      "490",
+      "559",
+      "400",
+      "456"
+    ],
+    "Halon Ring Delta",
+    "1009"
+  ],
+  "Halsen's Claim": [
+    "427",
+    "AlgorocHalsensClaim",
+    [
+      "762",
+      "771",
+      "505",
+      "513"
+    ],
+    "Halsen's Claim",
+    "1006"
+  ],
+  "Harehollow": [
+    "442",
+    "CelestionHarehollow",
+    [
+      "694",
+      "701",
+      "544",
+      "549"
+    ],
+    "Harehollow",
+    "1006"
+  ],
+  "Heart of the Godwood": [
+    "452",
+    "CelestionHeartoftheGodwood",
+    [
+      "718",
+      "727",
+      "525",
+      "532"
+    ],
+    "Heart of the Godwood",
+    "1006"
+  ],
+  "HMS Phineas": [
+    "165",
+    "UltimateProtogames005",
+    [
+      "74",
+      "83",
+      "463",
+      "470"
+    ],
+    "HMS Phineas",
+    "1069"
+  ],
+  "Holding Cells": [
+    "200",
+    "WhitevaleAdventurePolice",
+    [
+      "782",
+      "790",
+      "572",
+      "576"
+    ],
+    "Holding Cells",
+    "1026"
+  ],
+  "Housing Neighborhood": [
+    "4",
+    "HousingNeighborhood",
+    [
+      "670",
+      "709",
+      "573",
+      "601"
+    ],
+    "Housing Neighborhood",
+    "1007"
+  ],
+  "Housing Skymap": [
+    "60",
+    "HousingAlgorocSky",
+    [
+      "709",
+      "717",
+      "613",
+      "621"
+    ],
+    "Housing Skymap",
+    "1036"
+  ],
+  "Hycrest Church Basement": [
+    "357",
+    "AuroriaHycrestChurchBasement",
+    [
+      "634",
+      "637",
+      "556",
+      "557"
+    ],
+    "Hycrest Church Basement",
+    "1008"
+  ],
+  "Hycrest City Hall Basement": [
+    "359",
+    "AuroriaHycrestCityHallBasement",
+    [
+      "630",
+      "631",
+      "558",
+      "559"
+    ],
+    "Hycrest City Hall Basement",
+    "1008"
+  ],
+  "Hycrest Governor's Basement": [
+    "360",
+    "AuroriaHycrestGovernorsBasement",
+    [
+      "628",
+      "629",
+      "556",
+      "557"
+    ],
+    "Hycrest Governor's Basement",
+    "1008"
+  ],
+  "Hycrest Interrogation Center": [
+    "362",
+    "AuroriaHycrestInterrogationCenter",
+    [
+      "630",
+      "631",
+      "557",
+      "558"
+    ],
+    "Hycrest Interrogation Center",
+    "1008"
+  ],
+  "Icemaw Cavern": [
+    "421",
+    "AlgorocIcemawCavern",
+    [
+      "732",
+      "747",
+      "498",
+      "511"
+    ],
+    "Icemaw Cavern",
+    "1006"
+  ],
+  "Illium": [
+    "78",
+    "Illium",
+    [
+      "600",
+      "631",
+      "561",
+      "587"
+    ],
+    "Illium",
+    "1008"
+  ],
+  "Illium Public Works Tunnels": [
+    "457",
+    "IlliumPublicWorks",
+    [
+      "612",
+      "623",
+      "566",
+      "575"
+    ],
+    "Illium Public Works Tunnels",
+    "1008"
+  ],
+  "Incubation Complex": [
+    "278",
+    "ShiphandLevel6Xenobite",
+    [
+      "874",
+      "889",
+      "476",
+      "486"
+    ],
+    "Incubation Complex",
+    "1083"
+  ],
+  "Initiate Island": [
+    "18",
+    "InitiateIsland",
+    [
+      "672",
+      "709",
+      "580",
+      "610"
+    ],
+    "Initiate Island",
+    "1012"
+  ],
+  "Inner Core Chamber": [
+    "305",
+    "WesternGrimvaultInnerCoreChamber",
+    [
+      "680",
+      "693",
+      "501",
+      "512"
+    ],
+    "Inner Core Chamber",
+    "1033"
+  ],
+  "Intermediate Survival Seminar": [
+    "472",
+    "ProtogamesAcademyIntermediateSurvivalSemnar",
+    [
+      "264",
+      "277",
+      "54",
+      "65"
+    ],
+    "Intermediate Survival Seminar",
+    "1090"
+  ],
+  "Intern Disposal Facility 74": [
+    "204",
+    "UltimateProtogames023",
+    [
+      "418",
+      "427",
+      "463",
+      "470"
+    ],
+    "Intern Disposal Facility 74",
+    "1069"
+  ],
+  "Isle of Eternity": [
+    "124",
+    "PublicEventIslandStage2",
+    [
+      "672",
+      "771",
+      "532",
+      "596"
+    ],
+    "Isle of Eternity",
+    "1031"
+  ],
+  "Isle of the Keepers": [
+    "40",
+    "EternityIslands",
+    [
+      "652",
+      "717",
+      "591",
+      "625"
+    ],
+    "Isle of the Keepers",
+    "1031"
+  ],
+  "Jagged Rock Mine": [
+    "387",
+    "DeraduneJaggedRockMine",
+    [
+      "562",
+      "577",
+      "586",
+      "598"
+    ],
+    "Jagged Rock Mine",
+    "1008"
+  ],
+  "Junction Snowshadow Cave": [
+    "408",
+    "WhitevaleJunctionSnowshadowCave",
+    [
+      "800",
+      "811",
+      "584",
+      "593"
+    ],
+    "Junction Snowshadow Cave",
+    "1006"
+  ],
+  "Junction Zeta Bunker": [
+    "446",
+    "CelestionJunctionZetaBunker",
+    [
+      "748",
+      "761",
+      "555",
+      "565"
+    ],
+    "Junction Zeta Bunker",
+    "1006"
+  ],
+  "Kezrek's War Room": [
+    "461",
+    "IlliumKezreksWarRoom",
+    [
+      "620",
+      "625",
+      "584",
+      "587"
+    ],
+    "Kezrek's War Room",
+    "1008"
+  ],
+  "Kinetic Enhancement Lab": [
+    "222",
+    "NorthernWastesKineticEnhancementLab",
+    [
+      "78",
+      "91",
+      "54",
+      "61"
+    ],
+    "Kinetic Enhancement Lab",
+    "1032"
+  ],
+  "Levian Bay": [
+    "22",
+    "LevianBay",
+    [
+      "592",
+      "645",
+      "460",
+      "505"
+    ],
+    "Levian Bay",
+    "1008"
+  ],
+  "Life-Overseer's Creche": [
+    "279",
+    "ShiphandLevel6Pell",
+    [
+      "878",
+      "893",
+      "469",
+      "480"
+    ],
+    "Life-Overseer's Creche",
+    "1083"
+  ],
+  "Lifeloam Hollow": [
+    "320",
+    "WilderrunLifeloamHollow",
+    [
+      "718",
+      "723",
+      "506",
+      "509"
+    ],
+    "Lifeloam Hollow",
+    "1008"
+  ],
+  "Limbo Infomatrix": [
+    "114",
+    "DatascapeShipDesert",
+    [
+      "468",
+      "491",
+      "286",
+      "306"
+    ],
+    "Limbo Infomatrix",
+    "1052"
+  ],
+  "Locus of the Megadroid": [
+    "412",
+    "WhitevaleLocusoftheMegadroid",
+    [
+      "756",
+      "769",
+      "598",
+      "608"
+    ],
+    "Locus of the Megadroid",
+    "1006"
+  ],
+  "Lost and Found Department": [
+    "164",
+    "UltimateProtogames004",
+    [
+      "332",
+      "347",
+      "387",
+      "398"
+    ],
+    "Lost and Found Department",
+    "1069"
+  ],
+  "Lower Infinite Generator Core": [
+    "107",
+    "DatascapeInfiniteBasement02",
+    [
+      "682",
+      "689",
+      "592",
+      "597"
+    ],
+    "Lower Infinite Generator Core",
+    "1052"
+  ],
+  "Mad Ernest Vern's Basement": [
+    "324",
+    "MalgraveMadErnest",
+    [
+      "720",
+      "723",
+      "659",
+      "660"
+    ],
+    "Mad Ernest Vern's Basement",
+    "1033"
+  ],
+  "Malgrave": [
+    "42",
+    "Malgrave",
+    [
+      "678",
+      "755",
+      "617",
+      "683"
+    ],
+    "Malgrave",
+    "1033"
+  ],
+  "Mandatory Review Zone": [
+    "473",
+    "ProtogamesAcademyMandatoryReviewZone",
+    [
+      "344",
+      "363",
+      "48",
+      "64"
+    ],
+    "Mandatory Review Zone",
+    "1090"
+  ],
+  "Master Control Room": [
+    "196",
+    "AstrovoidAdventureMasterControlRoom",
+    [
+      "676",
+      "679",
+      "592",
+      "594"
+    ],
+    "Master Control Room",
+    "1027"
+  ],
+  "Maximum Security": [
+    "135",
+    "AdventureAstrovoidPrisonMaximumSecurity",
+    [
+      "672",
+      "681",
+      "604",
+      "610"
+    ],
+    "Maximum Security",
+    "1027"
+  ],
+  "Military HQ Basement": [
+    "361",
+    "AuroriaHycrestMilitaryHQBasement",
+    [
+      "632",
+      "635",
+      "555",
+      "556"
+    ],
+    "Military HQ Basement",
+    "1008"
+  ],
+  "Mind of the Globellum": [
+    "260",
+    "BlighthavenMindoftheGlobellum",
+    [
+      "728",
+      "743",
+      "479",
+      "491"
+    ],
+    "Mind of the Globellum",
+    "1033"
+  ],
+  "Mondo's Gadgetopolis": [
+    "460",
+    "IlliumMondosGadgetopolis",
+    [
+      "618",
+      "623",
+      "584",
+      "587"
+    ],
+    "Mondo's Gadgetopolis",
+    "1008"
+  ],
+  "Moodie Totem Den": [
+    "383",
+    "DeraduneMoodieTotemDen4",
+    [
+      "568",
+      "577",
+      "587",
+      "593"
+    ],
+    "Moodie Totem Den",
+    "1008"
+  ],
+  "Morek Throg's Lair": [
+    "433",
+    "AlgorocMorekThrogsLair",
+    [
+      "756",
+      "763",
+      "513",
+      "518"
+    ],
+    "Morek Throg's Lair",
+    "1006"
+  ],
+  "Nanite Repository": [
+    "450",
+    "CelestionNaniteRepository",
+    [
+      "732",
+      "745",
+      "562",
+      "570"
+    ],
+    "Nanite Repository",
+    "1006"
+  ],
+  "Nibben's Wine Cellar": [
+    "400",
+    "GalerasNibbensWineCellar",
+    [
+      "792",
+      "795",
+      "553",
+      "555"
+    ],
+    "Nibben's Wine Cellar",
+    "1006"
+  ],
+  "Northeastern Embertree": [
+    "440",
+    "CelestionEasternEmbertree",
+    [
+      "708",
+      "715",
+      "532",
+      "537"
+    ],
+    "Northeastern Embertree",
+    "1006"
+  ],
+  "Northern Wastes": [
+    "41",
+    "PocketCapNorthernWilds",
+    [
+      "76",
+      "103",
+      "57",
+      "76"
+    ],
+    "Northern Wastes",
+    "1032"
+  ],
+  "Northern Wilds": [
+    "1",
+    "NorthernWilds",
+    [
+      "760",
+      "785",
+      "482",
+      "501"
+    ],
+    "Northern Wilds",
+    "1006"
+  ],
+  "Nursery Checkpoint": [
+    "261",
+    "BlighthavenNurseryChecpoint",
+    [
+      "726",
+      "741",
+      "470",
+      "480"
+    ],
+    "Nursery Checkpoint",
+    "1033"
+  ],
+  "Nursery Observation Room": [
+    "262",
+    "BlighthavenNurseryObservationRoom",
+    [
+      "728",
+      "739",
+      "465",
+      "473"
+    ],
+    "Nursery Observation Room",
+    "1033"
+  ],
+  "Obsidian Wastes": [
+    "110",
+    "DatascapeFireRoom",
+    [
+      "584",
+      "607",
+      "628",
+      "646"
+    ],
+    "Obsidian Wastes",
+    "1052"
+  ],
+  "Ominous Icecave": [
+    "411",
+    "WhitevaleOminousIcecave",
+    [
+      "756",
+      "767",
+      "597",
+      "606"
+    ],
+    "Ominous Icecave",
+    "1006"
+  ],
+  "OMNICore-1": [
+    "214",
+    "WorldStory1OmniCore",
+    [
+      "682",
+      "707",
+      "573",
+      "595"
+    ],
+    "OMNICore-1",
+    "1080"
+  ],
+  "Outer Core Chamber Floor 1": [
+    "301",
+    "WesternGrimvaultOuterCore1",
+    [
+      "676",
+      "691",
+      "489",
+      "500"
+    ],
+    "Outer Core Chamber Floor 1",
+    "1033"
+  ],
+  "Outer Core Chamber Floor 2": [
+    "302",
+    "WesternGrimvaultOuterCore2",
+    [
+      "682",
+      "701",
+      "486",
+      "501"
+    ],
+    "Outer Core Chamber Floor 2",
+    "1033"
+  ],
+  "Outer Core Chamber Floor 3": [
+    "303",
+    "WesternGrimvaultOuterCore3",
+    [
+      "678",
+      "689",
+      "496",
+      "505"
+    ],
+    "Outer Core Chamber Floor 3",
+    "1033"
+  ],
+  "Outer Core Chamber Floor 4": [
+    "304",
+    "WesternGrimvaultOuterCore4",
+    [
+      "674",
+      "685",
+      "492",
+      "502"
+    ],
+    "Outer Core Chamber Floor 4",
+    "1033"
+  ],
+  "Outpost M-13": [
+    "67",
+    "ShiphandAsteroidMiningSubzone3",
+    [
+      "674",
+      "681",
+      "589",
+      "595"
+    ],
+    "Outpost M-13",
+    "1038"
+  ],
+  "Overgrown Passage": [
+    "317",
+    "WilderrunOvergrownPassage",
+    [
+      "730",
+      "735",
+      "496",
+      "499"
+    ],
+    "Overgrown Passage",
+    "1008"
+  ],
+  "Pellicane Test World": [
+    "47",
+    "PellicaneTestWorld",
+    [
+      "562",
+      "587",
+      "581",
+      "610"
+    ],
+    "Pellicane Test World",
+    "1034"
+  ],
+  "Phagelab Level 1": [
+    "296",
+    "WesternGrimvaultPhagelab1",
+    [
+      "660",
+      "673",
+      "489",
+      "500"
+    ],
+    "Phagelab Level 1",
+    "1033"
+  ],
+  "Phagelab Level 2": [
+    "298",
+    "WesternGrimvaultPhagelab2",
+    [
+      "666",
+      "681",
+      "487",
+      "500"
+    ],
+    "Phagelab Level 2",
+    "1033"
+  ],
+  "Phagelab Level 3": [
+    "299",
+    "WesternGrimvaultPhagelab3",
+    [
+      "654",
+      "665",
+      "490",
+      "500"
+    ],
+    "Phagelab Level 3",
+    "1033"
+  ],
+  "Pilgrim's Promenade": [
+    "437",
+    "ThaydPilgrimsPromenade",
+    [
+      "758",
+      "775",
+      "530",
+      "545"
+    ],
+    "Pilgrim's Promenade",
+    "1006"
+  ],
+  "Poxbrew Enclave": [
+    "363",
+    "AuroriaPoxbrewEnclave",
+    [
+      "632",
+      "645",
+      "555",
+      "567"
+    ],
+    "Poxbrew Enclave",
+    "1008"
+  ],
+  "Pride's Rest": [
+    "386",
+    "DeradunePridesRest",
+    [
+      "564",
+      "577",
+      "584",
+      "594"
+    ],
+    "Pride's Rest",
+    "1008"
+  ],
+  "Primal Kinesis Lab 9": [
+    "318",
+    "WilderrunPrimalKinesisLab9",
+    [
+      "746",
+      "755",
+      "497",
+      "505"
+    ],
+    "Primal Kinesis Lab 9",
+    "1008"
+  ],
+  "Prosperity Caverns": [
+    "345",
+    "EllevarProsperityCaverns",
+    [
+      "618",
+      "631",
+      "537",
+      "548"
+    ],
+    "Prosperity Caverns",
+    "1008"
+  ],
+  "Protogames Academy": [
+    "469",
+    "ProtogamesAcademy",
+    [
+      "48",
+      "231",
+      "47",
+      "100"
+    ],
+    "Protogames Academy",
+    "1090"
+  ],
+  "Protogames Academy Lobby": [
+    "470",
+    "ProtogamesAcademyLobby",
+    [
+      "66",
+      "73",
+      "58",
+      "63"
+    ],
+    "Protogames Academy Lobby",
+    "1090"
+  ],
+  "Protostar Petting Zoo": [
+    "181",
+    "UltimateProtogames021",
+    [
+      "326",
+      "335",
+      "688",
+      "696"
+    ],
+    "Protostar Petting Zoo",
+    "1069"
+  ],
+  "PvP Arena": [
+    "66",
+    "PvP_Arena",
+    [
+      "680",
+      "685",
+      "590",
+      "592"
+    ],
+    "PvP Arena",
+    "1039"
+  ],
+  "PvP: Cannon": [
+    "102",
+    "PvPCannon",
+    [
+      "672",
+      "685",
+      "589",
+      "601"
+    ],
+    "PvP: Cannon",
+    "1056"
+  ],
+  "PvP: Sabotage": [
+    "103",
+    "PvPSabotage",
+    [
+      "654",
+      "673",
+      "570",
+      "587"
+    ],
+    "PvP: Sabotage",
+    "1057"
+  ],
+  "PvP: Warplot Battleground": [
+    "100",
+    "PvPWarplotBG",
+    [
+      "668",
+      "695",
+      "629",
+      "645"
+    ],
+    "PvP: Warplot Battleground",
+    "1054"
+  ],
+  "PvP: Warplot Sky Map": [
+    "101",
+    "PvPWarplotSkyMap",
+    [
+      "684",
+      "699",
+      "590",
+      "604"
+    ],
+    "PvP: Warplot Sky Map",
+    "1055"
+  ],
+  "Quantum Vortex": [
+    "120",
+    "DatascapeAirRoom",
+    [
+      "818",
+      "851",
+      "350",
+      "377"
+    ],
+    "Quantum Vortex",
+    "1052"
+  ],
+  "Queen's Den": [
+    "271",
+    "BlighthavenQueensDen",
+    [
+      "784",
+      "793",
+      "518",
+      "525"
+    ],
+    "Queen's Den",
+    "1033"
+  ],
+  "Quest Test Island": [
+    "13",
+    "QuestTestIsland",
+    [
+      "670",
+      "699",
+      "581",
+      "604"
+    ],
+    "Quest Test Island",
+    "1011"
+  ],
+  "Rage Factory": [
+    "96",
+    "ShiphandRageLogicRageFactory",
+    [
+      "678",
+      "689",
+      "586",
+      "595"
+    ],
+    "Rage Factory",
+    "1051"
+  ],
+  "Randyland": [
+    "77",
+    "Randland",
+    [
+      "650",
+      "715",
+      "564",
+      "618"
+    ],
+    "Randyland",
+    "1041"
+  ],
+  "Recombination Chamber": [
+    "343",
+    "EllevarRecombinationChamber",
+    [
+      "618",
+      "625",
+      "543",
+      "549"
+    ],
+    "Recombination Chamber",
+    "1008"
+  ],
+  "Recontamination Room": [
+    "256",
+    "BlighthavenRecontaminationRoom",
+    [
+      "716",
+      "725",
+      "483",
+      "489"
+    ],
+    "Recontamination Room",
+    "1033"
+  ],
+  "Resonance Tower Control Room": [
+    "286",
+    "TheDefileResonanceTowerControlRoomExile",
+    [
+      "770",
+      "777",
+      "505",
+      "508"
+    ],
+    "Resonance Tower Control Room",
+    "1033"
+  ],
+  "Resource Cave": [
+    "377",
+    "DeraduneResourceCave",
+    [
+      "578",
+      "585",
+      "553",
+      "558"
+    ],
+    "Resource Cave",
+    "1008"
+  ],
+  "Riot in the Void": [
+    "36",
+    "AstrovoidPrisonAdventure",
+    [
+      "662",
+      "695",
+      "578",
+      "612"
+    ],
+    "Riot in the Void",
+    "1027"
+  ],
+  "Riverstone Caverns": [
+    "337",
+    "EllevarRiverstoneCaverns",
+    [
+      "624",
+      "637",
+      "508",
+      "518"
+    ],
+    "Riverstone Caverns",
+    "1008"
+  ],
+  "Rockbreaker Mine": [
+    "194",
+    "AstrovoidPrisonAdventureRockbreakerMine",
+    [
+      "670",
+      "679",
+      "594",
+      "601"
+    ],
+    "Rockbreaker Mine",
+    "1027"
+  ],
+  "Roughrock Underground": [
+    "225",
+    "HalonRingBCRoughrockUnderground",
+    [
+      "420",
+      "435",
+      "505",
+      "517"
+    ],
+    "Roughrock Underground",
+    "1009"
+  ],
+  "Ruins of Kel Voreth": [
+    "21",
+    "OsunDungeon",
+    [
+      "678",
+      "705",
+      "589",
+      "612"
+    ],
+    "Ruins of Kel Voreth",
+    "1015"
+  ],
+  "Sanctuary of the Swordmaiden": [
+    "85",
+    "TorineSanctuary",
+    [
+      "750",
+      "791",
+      "512",
+      "549"
+    ],
+    "Sanctuary of the Swordmaiden",
+    "1048"
+  ],
+  "Secret Ops Center": [
+    "454",
+    "ThaydSecretOpsCenter",
+    [
+      "754",
+      "767",
+      "564",
+      "573"
+    ],
+    "Secret Ops Center",
+    "1006"
+  ],
+  "Security Sublevel Sigma": [
+    "58",
+    "LevianBayStarComm2",
+    [
+      "640",
+      "651",
+      "480",
+      "487"
+    ],
+    "Security Sublevel Sigma",
+    "1008"
+  ],
+  "Shadestricken Laboratories": [
+    "253",
+    "ShadesEveShadestrickenLaboratories",
+    [
+      "686",
+      "703",
+      "587",
+      "600"
+    ],
+    "Shadestricken Laboratories",
+    "1082"
+  ],
+  "Shiphand Dominion Arkship": [
+    "206",
+    "ShiphandDominionArkship",
+    [
+      "640",
+      "713",
+      "567",
+      "628"
+    ],
+    "Shiphand Dominion Arkship",
+    "1076"
+  ],
+  "Shiphand: Deep Space Disappearance": [
+    "140",
+    "ShiphandDeepSpaceDisappearenceParent",
+    [
+      "654",
+      "717",
+      "568",
+      "615"
+    ],
+    "Shiphand: Deep Space Disappearance",
+    "1060"
+  ],
+  "Shiphand: Fragment Zero": [
+    "277",
+    "ShiphandLevel6",
+    [
+      "880",
+      "897",
+      "473",
+      "489"
+    ],
+    "Shiphand: Fragment Zero",
+    "1083"
+  ],
+  "Shiphand: Outpost M-13": [
+    "63",
+    "ShiphandAsteroidMiningZone",
+    [
+      "882",
+      "891",
+      "681",
+      "687"
+    ],
+    "Shiphand: Outpost M-13",
+    "1038"
+  ],
+  "Shiphand: Rage Logic": [
+    "93",
+    "ShiphandRageLogic",
+    [
+      "668",
+      "697",
+      "580",
+      "599"
+    ],
+    "Shiphand: Rage Logic",
+    "1051"
+  ],
+  "Shiphand: Salvage Rights": [
+    "25",
+    "X82CargoShip",
+    [
+      "678",
+      "685",
+      "590",
+      "595"
+    ],
+    "Shiphand: Salvage Rights",
+    "1018"
+  ],
+  "Shiphand: Space Madness": [
+    "121",
+    "ShiphandSpaceMadness",
+    [
+      "678",
+      "689",
+      "591",
+      "599"
+    ],
+    "Shiphand: Space Madness",
+    "1058"
+  ],
+  "Shiphand: The Gauntlet": [
+    "132",
+    "ShiphandTheGauntlet",
+    [
+      "658",
+      "665",
+      "605",
+      "613"
+    ],
+    "Shiphand: The Gauntlet",
+    "1062"
+  ],
+  "Shiphand: Void Hunter": [
+    "90",
+    "ShiphandVoidHunter",
+    [
+      "672",
+      "679",
+      "590",
+      "596"
+    ],
+    "Shiphand: Void Hunter",
+    "1050"
+  ],
+  "Sinnatus's Cave": [
+    "189",
+    "HycrestAdventureSinnatusCave",
+    [
+      "638",
+      "649",
+      "549",
+      "557"
+    ],
+    "Sinnatus's Cave",
+    "1024"
+  ],
+  "Skullcano Island": [
+    "20",
+    "SkullcanoIsland",
+    [
+      "652",
+      "697",
+      "569",
+      "589"
+    ],
+    "Skullcano Island",
+    "1014"
+  ],
+  "Skullcano: Golden Cave": [
+    "73",
+    "SkullcanoGoldenCave",
+    [
+      "656",
+      "667",
+      "579",
+      "587"
+    ],
+    "Skullcano: Golden Cave",
+    "1014"
+  ],
+  "Skullcano: Molten Cavern": [
+    "72",
+    "SkullcanoMoltenCavern",
+    [
+      "672",
+      "685",
+      "574",
+      "586"
+    ],
+    "Skullcano: Molten Cavern",
+    "1014"
+  ],
+  "Slumbering Silversnout Den": [
+    "416",
+    "WhitevaleSlumberingSilversnoutDen",
+    [
+      "786",
+      "795",
+      "565",
+      "572"
+    ],
+    "Slumbering Silversnout Den",
+    "1006"
+  ],
+  "Softsnow Yeti Den": [
+    "419",
+    "WhitevaleSoftsnowYetiDen",
+    [
+      "752",
+      "759",
+      "572",
+      "577"
+    ],
+    "Softsnow Yeti Den",
+    "1006"
+  ],
+  "Southern Grimvault": [
+    "53",
+    "Grimvault",
+    [
+      "688",
+      "757",
+      "543",
+      "619"
+    ],
+    "Southern Grimvault",
+    "1033"
+  ],
+  "Sparkmire Mine": [
+    "325",
+    "MalgraveSparkmireMine",
+    [
+      "706",
+      "717",
+      "660",
+      "668"
+    ],
+    "Sparkmire Mine",
+    "1033"
+  ],
+  "Spider Queen's Den": [
+    "448",
+    "CelestionSpiderQueensDen",
+    [
+      "728",
+      "743",
+      "549",
+      "561"
+    ],
+    "Spider Queen's Den",
+    "1006"
+  ],
+  "Spigo's Quarters": [
+    "311",
+    "FarsideSpigosQuarters",
+    [
+      "752",
+      "757",
+      "484",
+      "488"
+    ],
+    "Spigo's Quarters",
+    "1019"
+  ],
+  "Stalker's Den": [
+    "335",
+    "LevianBayStalkersDen",
+    [
+      "612",
+      "617",
+      "482",
+      "486"
+    ],
+    "Stalker's Den",
+    "1008"
+  ],
+  "Star-Comm Basin": [
+    "192",
+    "PocketCapLevianBay",
+    [
+      "668",
+      "695",
+      "579",
+      "602"
+    ],
+    "Star-Comm Basin",
+    "1072"
+  ],
+  "Starlance War Room": [
+    "369",
+    "AuroriaStarlanceWarRoom",
+    [
+      "658",
+      "667",
+      "564",
+      "571"
+    ],
+    "Starlance War Room",
+    "1008"
+  ],
+  "Stormtalon's Lair": [
+    "19",
+    "StormtalonLair",
+    [
+      "674",
+      "689",
+      "588",
+      "599"
+    ],
+    "Stormtalon's Lair",
+    "1013"
+  ],
+  "Strain Maw": [
+    "281",
+    "TheDefileStrainMaw",
+    [
+      "786",
+      "801",
+      "497",
+      "510"
+    ],
+    "Strain Maw",
+    "1033"
+  ],
+  "Strain Tunnels": [
+    "276",
+    "SouthernGrimvaultStrainTunnels",
+    [
+      "720",
+      "735",
+      "546",
+      "559"
+    ],
+    "Strain Tunnels",
+    "1033"
+  ],
+  "Stranger's Hollow": [
+    "316",
+    "WilderrunStrangersHollow",
+    [
+      "718",
+      "721",
+      "525",
+      "527"
+    ],
+    "Stranger's Hollow",
+    "1008"
+  ],
+  "Stygian Thicket": [
+    "252",
+    "ShadesEveStygianThicket",
+    [
+      "676",
+      "699",
+      "577",
+      "596"
+    ],
+    "Stygian Thicket",
+    "1082"
+  ],
+  "Sub-Basement 101": [
+    "199",
+    "WhitevaleAdventureProtostar",
+    [
+      "782",
+      "787",
+      "566",
+      "569"
+    ],
+    "Sub-Basement 101",
+    "1026"
+  ],
+  "Surfskitter Cave": [
+    "334",
+    "LevianBaySurfskitterCave",
+    [
+      "632",
+      "639",
+      "496",
+      "501"
+    ],
+    "Surfskitter Cave",
+    "1008"
+  ],
+  "Tanglemore Den": [
+    "444",
+    "CelestionTanglemoreDen",
+    [
+      "720",
+      "735",
+      "564",
+      "576"
+    ],
+    "Tanglemore Den",
+    "1006"
+  ],
+  "Terminite Mound": [
+    "237",
+    "HalonRingBCTerminiteMound",
+    [
+      "420",
+      "429",
+      "505",
+      "510"
+    ],
+    "Terminite Mound",
+    "1009"
+  ],
+  "Thayd": [
+    "14",
+    "Thayd",
+    [
+      "750",
+      "781",
+      "541",
+      "565"
+    ],
+    "Thayd",
+    "1006"
+  ],
+  "Thayd Public Works": [
+    "455",
+    "ThaydPublicWorks",
+    [
+      "760",
+      "769",
+      "556",
+      "562"
+    ],
+    "Thayd Public Works",
+    "1006"
+  ],
+  "The Bladevault": [
+    "372",
+    "AuroriaBladevault",
+    [
+      "636",
+      "651",
+      "571",
+      "582"
+    ],
+    "The Bladevault",
+    "1008"
+  ],
+  "The Blood Crater": [
+    "227",
+    "HalonRingBloodCrater",
+    [
+      "386",
+      "401",
+      "487",
+      "498"
+    ],
+    "The Blood Crater",
+    "1009"
+  ],
+  "The Blue Horizon Museum": [
+    "462",
+    "ThaydBlueHorizonMuseum",
+    [
+      "768",
+      "775",
+      "558",
+      "564"
+    ],
+    "The Blue Horizon Museum",
+    "1006"
+  ],
+  "The Botcave": [
+    "407",
+    "WhitevaleBotcave",
+    [
+      "788",
+      "805",
+      "572",
+      "587"
+    ],
+    "The Botcave",
+    "1006"
+  ],
+  "The Break Room": [
+    "177",
+    "UltimateProtogames017",
+    [
+      "410",
+      "425",
+      "609",
+      "621"
+    ],
+    "The Break Room",
+    "1069"
+  ],
+  "The Core": [
+    "201",
+    "GrimvaultCore",
+    [
+      "678",
+      "687",
+      "588",
+      "594"
+    ],
+    "The Core",
+    "1073"
+  ],
+  "The Data Matrix": [
+    "217",
+    "WorldStory1DataMatrix",
+    [
+      "864",
+      "875",
+      "582",
+      "591"
+    ],
+    "The Data Matrix",
+    "1080"
+  ],
+  "The Datascape": [
+    "98",
+    "Datascape",
+    [
+      "682",
+      "707",
+      "579",
+      "597"
+    ],
+    "The Datascape",
+    "1052"
+  ],
+  "The Defile": [
+    "155",
+    "EasternGrimvault",
+    [
+      "712",
+      "813",
+      "483",
+      "551"
+    ],
+    "The Defile",
+    "1033"
+  ],
+  "The Destiny": [
+    "188",
+    "DominionArkShipShuttleBay",
+    [
+      "660",
+      "681",
+      "598",
+      "614"
+    ],
+    "The Destiny",
+    "1030"
+  ],
+  "The Divergence": [
+    "295",
+    "WesternGrimvaultDivergence",
+    [
+      "652",
+      "661",
+      "491",
+      "498"
+    ],
+    "The Divergence",
+    "1033"
+  ],
+  "The Doomfarer": [
+    "228",
+    "HalonRingBCDoomfarer",
+    [
+      "396",
+      "405",
+      "492",
+      "499"
+    ],
+    "The Doomfarer",
+    "1009"
+  ],
+  "The Dust Stalker": [
+    "406",
+    "GalerasDustStalker",
+    [
+      "678",
+      "687",
+      "589",
+      "597"
+    ],
+    "The Dust Stalker",
+    "1087"
+  ],
+  "The Dustrunner": [
+    "310",
+    "FarsideDustrunnerEx",
+    [
+      "754",
+      "759",
+      "482",
+      "486"
+    ],
+    "The Dustrunner",
+    "1019"
+  ],
+  "The Elder Vault": [
+    "57",
+    "LevianBayStarComm1",
+    [
+      "622",
+      "631",
+      "478",
+      "487"
+    ],
+    "The Elder Vault",
+    "1008"
+  ],
+  "The Emperor's Daughter": [
+    "282",
+    "TheDefileEmperorsDaughter",
+    [
+      "768",
+      "777",
+      "500",
+      "506"
+    ],
+    "The Emperor's Daughter",
+    "1033"
+  ],
+  "The Enigmatic Tryst": [
+    "91",
+    "ShiphandVoidHunterEnigmaticTryst",
+    [
+      "672",
+      "677",
+      "591",
+      "595"
+    ],
+    "The Enigmatic Tryst",
+    "1050"
+  ],
+  "The Fist of Azrion": [
+    "291",
+    "WesternGrimvaultFistofAzrion",
+    [
+      "700",
+      "723",
+      "504",
+      "524"
+    ],
+    "The Fist of Azrion",
+    "1033"
+  ],
+  "The Gambler's Ruin": [
+    "159",
+    "ExileArkShipTutorialGreenHouse",
+    [
+      "654",
+      "673",
+      "556",
+      "572"
+    ],
+    "The Gambler's Ruin",
+    "1022"
+  ],
+  "The Gauntlet": [
+    "134",
+    "ShiphandTheGauntletMain",
+    [
+      "654",
+      "669",
+      "604",
+      "615"
+    ],
+    "The Gauntlet",
+    "1062"
+  ],
+  "The Golden Fields": [
+    "153",
+    "DruseraWorldStoryInstance4",
+    [
+      "670",
+      "691",
+      "589",
+      "604"
+    ],
+    "The Golden Fields",
+    "1068"
+  ],
+  "The Hidden Dark": [
+    "139",
+    "DruseraWorldStoryInstance3",
+    [
+      "676",
+      "693",
+      "585",
+      "598"
+    ],
+    "The Hidden Dark",
+    "1065"
+  ],
+  "The Hidden Grotto": [
+    "425",
+    "AlgorocHiddenGrotto",
+    [
+      "750",
+      "763",
+      "512",
+      "523"
+    ],
+    "The Hidden Grotto",
+    "1006"
+  ],
+  "The Hillscourge": [
+    "376",
+    "DeraduneHillscourge2",
+    [
+      "574",
+      "581",
+      "553",
+      "557"
+    ],
+    "The Hillscourge",
+    "1008"
+  ],
+  "The Hycrest Insurrection": [
+    "33",
+    "HycrestAdventure",
+    [
+      "622",
+      "643",
+      "552",
+      "573"
+    ],
+    "The Hycrest Insurrection",
+    "1024"
+  ],
+  "The Lightspire": [
+    "464",
+    "TheDefileLightspireInterior",
+    [
+      "740",
+      "749",
+      "505",
+      "513"
+    ],
+    "The Lightspire",
+    "1033"
+  ],
+  "The Lobby": [
+    "160",
+    "UltimateProtogamesStart",
+    [
+      "420",
+      "423",
+      "540",
+      "542"
+    ],
+    "The Lobby",
+    "1069"
+  ],
+  "The Lost Caverns": [
+    "391",
+    "DeraduneLostCaverns",
+    [
+      "558",
+      "579",
+      "557",
+      "575"
+    ],
+    "The Lost Caverns",
+    "1008"
+  ],
+  "The Maiden's Offering": [
+    "315",
+    "WilderrunMaidensOffering",
+    [
+      "760",
+      "771",
+      "527",
+      "536"
+    ],
+    "The Maiden's Offering",
+    "1008"
+  ],
+  "The Malgrave Trail": [
+    "24",
+    "MalgraveAdventure",
+    [
+      "678",
+      "753",
+      "623",
+      "678"
+    ],
+    "The Malgrave Trail",
+    "1017"
+  ],
+  "The Meatlocker": [
+    "197",
+    "WhitevaleAdventureDarkspur",
+    [
+      "776",
+      "785",
+      "566",
+      "570"
+    ],
+    "The Meatlocker",
+    "1026"
+  ],
+  "The Necrohive": [
+    "365",
+    "AuroriaNecrohive",
+    [
+      "650",
+      "663",
+      "550",
+      "560"
+    ],
+    "The Necrohive",
+    "1008"
+  ],
+  "The New Imperial Museum of Illium": [
+    "456",
+    "IlliumMuseum",
+    [
+      "608",
+      "617",
+      "555",
+      "563"
+    ],
+    "The New Imperial Museum of Illium",
+    "1008"
+  ],
+  "The Oculus": [
+    "104",
+    "DatascapeOculus",
+    [
+      "682",
+      "709",
+      "578",
+      "598"
+    ],
+    "The Oculus",
+    "1052"
+  ],
+  "The Old Loftite Mine": [
+    "329",
+    "MalgraveOldLoftiteMine",
+    [
+      "728",
+      "731",
+      "641",
+      "644"
+    ],
+    "The Old Loftite Mine",
+    "1033"
+  ],
+  "The Positron": [
+    "95",
+    "ShiphandRageLogicPositron",
+    [
+      "704",
+      "711",
+      "555",
+      "561"
+    ],
+    "The Positron",
+    "1051"
+  ],
+  "The Prison Complex": [
+    "195",
+    "AstrovoidAdventureThePrisonComplex",
+    [
+      "674",
+      "681",
+      "590",
+      "595"
+    ],
+    "The Prison Complex",
+    "1027"
+  ],
+  "The Prototentiary": [
+    "167",
+    "UltimateProtogames007",
+    [
+      "244",
+      "255",
+      "462",
+      "470"
+    ],
+    "The Prototentiary",
+    "1069"
+  ],
+  "The Queen's Lair": [
+    "338",
+    "EllevarQueensLair",
+    [
+      "628",
+      "635",
+      "542",
+      "548"
+    ],
+    "The Queen's Lair",
+    "1008"
+  ],
+  "The Screaming Sword": [
+    "283",
+    "TheDefileScreamingSword",
+    [
+      "768",
+      "775",
+      "500",
+      "506"
+    ],
+    "The Screaming Sword",
+    "1033"
+  ],
+  "The Siege of Tempest Refuge": [
+    "23",
+    "GalerasAdventure",
+    [
+      "786",
+      "807",
+      "541",
+      "551"
+    ],
+    "The Siege of Tempest Refuge",
+    "1016"
+  ],
+  "The Skittering Grotto": [
+    "435",
+    "AlgorocSkitteringGrotto",
+    [
+      "778",
+      "789",
+      "516",
+      "524"
+    ],
+    "The Skittering Grotto",
+    "1006"
+  ],
+  "The Squirgnasium": [
+    "169",
+    "UltimateProtogames009",
+    [
+      "78",
+      "89",
+      "535",
+      "542"
+    ],
+    "The Squirgnasium",
+    "1069"
+  ],
+  "The Steady Traveler": [
+    "64",
+    "ShiphandAsteroidMiningSubzone1",
+    [
+      "880",
+      "893",
+      "679",
+      "688"
+    ],
+    "The Steady Traveler",
+    "1038"
+  ],
+  "The Steel Serpent": [
+    "144",
+    "ShiphandDeepSpaceDisappearanceTheSteelSerpent",
+    [
+      "662",
+      "681",
+      "571",
+      "586"
+    ],
+    "The Steel Serpent",
+    "1060"
+  ],
+  "The Summoner's Den": [
+    "368",
+    "AuroriaSummonersDen",
+    [
+      "644",
+      "647",
+      "575",
+      "578"
+    ],
+    "The Summoner's Den",
+    "1008"
+  ],
+  "The Terminus Complex": [
+    "191",
+    "DruseraWorldStoryInstance5",
+    [
+      "746",
+      "765",
+      "527",
+      "543"
+    ],
+    "The Terminus Complex",
+    "1071"
+  ],
+  "The Widowmaker": [
+    "292",
+    "WesternGrimvaultWidowmaker",
+    [
+      "710",
+      "733",
+      "504",
+      "524"
+    ],
+    "The Widowmaker",
+    "1033"
+  ],
+  "Thundering Grotto": [
+    "405",
+    "GalerasThunderingGrotto",
+    [
+      "800",
+      "805",
+      "550",
+      "554"
+    ],
+    "Thundering Grotto",
+    "1006"
+  ],
+  "Transfusion Chamber": [
+    "263",
+    "BlighthavenTransfusionChamber",
+    [
+      "730",
+      "741",
+      "454",
+      "462"
+    ],
+    "Transfusion Chamber",
+    "1033"
+  ],
+  "Tremor Ridge Mine": [
+    "420",
+    "AlgorocTremorRidgeMine",
+    [
+      "758",
+      "765",
+      "503",
+      "507"
+    ],
+    "Tremor Ridge Mine",
+    "1006"
+  ],
+  "Tumbling Caves": [
+    "332",
+    "CrimsonIsleTumblingCaves2",
+    [
+      "516",
+      "519",
+      "584",
+      "586"
+    ],
+    "Tumbling Caves",
+    "1008"
+  ],
+  "Ultimate Protogames": [
+    "154",
+    "InfiniteLabs",
+    [
+      "52",
+      "363",
+      "369",
+      "564"
+    ],
+    "Ultimate Protogames",
+    "1069"
+  ],
+  "Ultimate Protogames 010": [
+    "170",
+    "UltimateProtogames010",
+    [
+      "156",
+      "167",
+      "532",
+      "541"
+    ],
+    "Ultimate Protogames 010",
+    "1069"
+  ],
+  "Ultimate Protogames 014": [
+    "174",
+    "UltimateProtogames014",
+    [
+      "168",
+      "175",
+      "605",
+      "611"
+    ],
+    "Ultimate Protogames 014",
+    "1069"
+  ],
+  "Ultimate Protogames 015": [
+    "205",
+    "UltimateProtogames015",
+    [
+      "248",
+      "261",
+      "613",
+      "624"
+    ],
+    "Ultimate Protogames 015",
+    "1069"
+  ],
+  "Ultimate Protogames 016": [
+    "176",
+    "UltimateProtogames016",
+    [
+      "328",
+      "341",
+      "611",
+      "627"
+    ],
+    "Ultimate Protogames 016",
+    "1069"
+  ],
+  "Ultimate Protogames 020": [
+    "180",
+    "UltimateProtogames020",
+    [
+      "244",
+      "251",
+      "688",
+      "693"
+    ],
+    "Ultimate Protogames 020",
+    "1069"
+  ],
+  "Upper Infinite Generator Core": [
+    "106",
+    "DatascapeInfiniteBasement01",
+    [
+      "682",
+      "689",
+      "578",
+      "583"
+    ],
+    "Upper Infinite Generator Core",
+    "1052"
+  ],
+  "Virtue's Landing": [
+    "88",
+    "FarsideVirtuesLanding",
+    [
+      "788",
+      "799",
+      "505",
+      "514"
+    ],
+    "Virtue's Landing",
+    "1019"
+  ],
+  "Void's Fury": [
+    "198",
+    "WhitevaleAdventureMarauder",
+    [
+      "782",
+      "789",
+      "568",
+      "572"
+    ],
+    "Void's Fury",
+    "1026"
+  ],
+  "Volatility Lattice": [
+    "116",
+    "DatascapeWDBRoom",
+    [
+      "1024",
+      "1041",
+      "265",
+      "280"
+    ],
+    "Volatility Lattice",
+    "1052"
+  ],
+  "Vorion's Sanctuary": [
+    "300",
+    "WesternGrimvaultVorionsSanctuary",
+    [
+      "656",
+      "667",
+      "512",
+      "521"
+    ],
+    "Vorion's Sanctuary",
+    "1033"
+  ],
+  "Walatiki Temple": [
+    "69",
+    "PvPSmashandGrab",
+    [
+      "688",
+      "701",
+      "587",
+      "599"
+    ],
+    "Walatiki Temple",
+    "1040"
+  ],
+  "Walker's Landing": [
+    "87",
+    "FarsideWalkersLanding",
+    [
+      "800",
+      "811",
+      "498",
+      "506"
+    ],
+    "Walker's Landing",
+    "1019"
+  ],
+  "War of the Wilds": [
+    "32",
+    "NorthernWildsAdventure",
+    [
+      "756",
+      "791",
+      "482",
+      "500"
+    ],
+    "War of the Wilds",
+    "1023"
+  ],
+  "Waste Management Facility": [
+    "173",
+    "UltimateProtogames013",
+    [
+      "72",
+      "83",
+      "614",
+      "623"
+    ],
+    "Waste Management Facility",
+    "1069"
+  ],
+  "Western Embertree": [
+    "439",
+    "CelestionWesternEmbertree",
+    [
+      "704",
+      "711",
+      "533",
+      "538"
+    ],
+    "Western Embertree",
+    "1006"
+  ],
+  "Western Grimvault": [
+    "70",
+    "WesternGrimvault",
+    [
+      "644",
+      "721",
+      "498",
+      "560"
+    ],
+    "Western Grimvault",
+    "1033"
+  ],
+  "Whistlewind Caverns": [
+    "398",
+    "GalerasWhistlewindCaverns",
+    [
+      "776",
+      "785",
+      "536",
+      "544"
+    ],
+    "Whistlewind Caverns",
+    "1006"
+  ],
+  "Whitevale": [
+    "2",
+    "Whitevale",
+    [
+      "700",
+      "827",
+      "565",
+      "624"
+    ],
+    "Whitevale",
+    "1006"
+  ],
+  "Wilderrun": [
+    "26",
+    "Wilderrun",
+    [
+      "690",
+      "785",
+      "487",
+      "567"
+    ],
+    "Wilderrun",
+    "1008"
+  ],
+  "Wildwood": [
+    "10",
+    "Protopia",
+    [
+      "660",
+      "705",
+      "572",
+      "610"
+    ],
+    "Wildwood",
+    "1010"
+  ],
+  "Windfall Cave": [
+    "370",
+    "AuroriaWindfallCave",
+    [
+      "640",
+      "645",
+      "569",
+      "574"
+    ],
+    "Windfall Cave",
+    "1008"
+  ],
+  "Witchrock Catacombs": [
+    "374",
+    "DeraduneWitchrockCatacombs",
+    [
+      "566",
+      "571",
+      "559",
+      "562"
+    ],
+    "Witchrock Catacombs",
+    "1008"
+  ],
+  "Witchrock Cavern": [
+    "384",
+    "DeraduneWitchrockCavern",
+    [
+      "568",
+      "575",
+      "589",
+      "594"
+    ],
+    "Witchrock Cavern",
+    "1008"
+  ],
+  "Witchrock Passage": [
+    "373",
+    "DeraduneWitchrockPassage",
+    [
+      "554",
+      "567",
+      "555",
+      "566"
+    ],
+    "Witchrock Passage",
+    "1008"
+  ],
+  "Wreck of the Novus": [
+    "323",
+    "MalgraveNovum",
+    [
+      "718",
+      "729",
+      "659",
+      "667"
+    ],
+    "Wreck of the Novus",
+    "1033"
+  ],
+  "XT-9 Element Augment Complex": [
+    "371",
+    "AuroriaXT9ElementAugmentComplex",
+    [
+      "640",
+      "649",
+      "564",
+      "571"
+    ],
+    "XT-9 Element Augment Complex",
+    "1008"
+  ],
+  "Zarkhov's Shade": [
+    "92",
+    "ShiphandVoidHunterZarkhovsShade",
+    [
+      "674",
+      "689",
+      "586",
+      "599"
+    ],
+    "Zarkhov's Shade",
+    "1050"
+  ]
+}
