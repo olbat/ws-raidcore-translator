@@ -8,7 +8,7 @@ require 'json'
 require 'uri'
 require 'pp'
 
-USAGE="usage: #{$0} <convert|i18n_v1|i18n_v2> [opts] <file1> <file2> ... <fileN>"
+USAGE="usage: #{$0} <translate|convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>"
 
 R_STR=/"[^"]+"/
 R_COND=/\s+\w+\s+==\s+(#{R_STR.source})\s+/
@@ -169,7 +169,6 @@ def self.ztranslate(name,lang)
   end
 end
 
-
 def self.ntranslate(name,lang)
   return if $nonet
   id = id(name)
@@ -258,7 +257,7 @@ rescue OptionParser::MissingArgument,OptionParser::InvalidOption => e
 end
 
 abort USAGE if ARGV.size < 2
-abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:convert|i18n_v1|i18n_v2|i18n_v3)$/
+abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:translate|convert|i18n_v1|i18n_v2|i18n_v3)$/
 
 
 cmd = ARGV[0].to_sym
@@ -283,6 +282,19 @@ if tfile
 else
   translations = {}
 end
+
+# translate mode
+if cmd == :translate
+  trans = lambda{|n,l| t = translate(n,l); $stdout.puts t if t}
+  if ARGV.size < 2 or ARGV[1] == '-'
+    $stdin.read.each_line{|n| trans.call(n.strip,lang)}
+  else
+    ARGV[1..-1].each{|n| trans.call(n,lang)}
+  end
+  exit 0
+end
+
+# i18n or convert mode
 
 ARGV[1..-1].each do |f|
   abort "Cannot read file #{f}" unless File.readable?(f)

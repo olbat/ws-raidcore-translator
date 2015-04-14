@@ -26,6 +26,22 @@ $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
 
 
 ## Use cases
+### Manually translate specific entries in French
+```
+$ docker run olbat/ws-raidcore-translator \
+    raidcore-translator translate -l fr Defragment "Life Force" # ...
+```
+
+### Manually translate file entries in German
+```
+$ cat entries
+Defragment
+Life Force
+
+$ cat entries | docker run -i olbat/ws-raidcore-translator \
+    raidcore-translator  translate -l de -
+```
+
 ### Rewrite the Raidcore module in French
 ```
 $ docker run -v /path/to/Raidcore:/src/ olbat/ws-raidcore-translator \
@@ -149,7 +165,7 @@ All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 
 ## Usage
 ```
-usage: raidcore-translator <convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>
+usage: raidcore-translator <translate|convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>
     -h, --help                       Display this screen
     -c, --[no-]comment               Add comments to specify the original names
     -d, --dump                       Generate a JSON dump of translations
