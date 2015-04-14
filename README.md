@@ -163,9 +163,14 @@ All-fr.json            EpFrostAir-de.log       MaelstromAuthority-de.json
 ...
 ```
 
+### Dump map translation array
+```
+$ docker run olbat/ws-raidcore-translator raidcore-translator maps
+```
+
 ## Usage
 ```
-usage: raidcore-translator <translate|convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>
+usage: raidcore-translator <translate|maps|convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>
     -h, --help                       Display this screen
     -c, --[no-]comment               Add comments to specify the original names
     -d, --dump                       Generate a JSON dump of translations

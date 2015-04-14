@@ -8,7 +8,7 @@ require 'json'
 require 'uri'
 require 'pp'
 
-USAGE="usage: #{$0} <translate|convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>"
+USAGE="usage: #{$0} <translate|maps|convert|i18n_v1|i18n_v2|i18n_v3> [opts] <file1> <file2> ... <fileN>"
 
 R_STR=/"[^"]+"/
 R_COND=/\s+\w+\s+==\s+(#{R_STR.source})\s+/
@@ -90,6 +90,28 @@ def self.api_map_url(lang)
   File.join(API_SITE,lang,'/maps/10000/World')
 end
 
+def self.load_maps(lang)
+  $maps = {}
+  doc_en = doc_lang = nil
+  begin
+    doc_en = Nokogiri::HTML(open(api_map_url('en')))
+    doc_lang = Nokogiri::HTML(open(api_map_url(lang)))
+  rescue Exception => e
+    abort "Cannot fetch #{api_map_url('en')}: #{e.message}"
+  end
+  $maps[:en] = doc_en.xpath(XPATH_MAP_LIST[:en]).inject({}) do |ret,m|
+    ret[m.text.strip] = JSON.parse(m['value'])
+    ret
+  end
+  $logger.debug("Loaded #{$maps[:en].size} maps")
+
+  $maps[lang.to_sym] = doc_lang.xpath(XPATH_MAP_LIST[lang.to_sym]).inject({}) do |ret,m|
+    val = JSON.parse(m['value'])
+    ret[val[0]] = val
+    ret
+  end
+end
+
 def self.select_id(name,links)
   # name exact match
   links.select! do |l|
@@ -140,27 +162,7 @@ end
 def self.ztranslate(name,lang)
   return if $nonet
 
-  unless $maps
-    $maps = {}
-    doc_en = doc_lang = nil
-    begin
-      doc_en = Nokogiri::HTML(open(api_map_url('en')))
-      doc_lang = Nokogiri::HTML(open(api_map_url(lang)))
-    rescue Exception => e
-      abort "Cannot fetch #{api_map_url('en')}: #{e.message}"
-    end
-    $maps[:en] = doc_en.xpath(XPATH_MAP_LIST[:en]).inject({}) do |ret,m|
-      ret[m.text.strip] = JSON.parse(m['value'])
-      ret
-    end
-    $logger.debug("Loaded #{$maps[:en].size} maps")
-
-    $maps[lang.to_sym] = doc_lang.xpath(XPATH_MAP_LIST[lang.to_sym]).inject({}) do |ret,m|
-      val = JSON.parse(m['value'])
-      ret[val[0]] = val
-      ret
-    end
-  end
+  load_maps(lang) unless $maps
 
   if map = $maps[:en][name.strip]
     $maps[lang.to_sym][map[0]][3]
@@ -256,8 +258,8 @@ rescue OptionParser::MissingArgument,OptionParser::InvalidOption => e
   abort e.message
 end
 
-abort USAGE if ARGV.size < 2
-abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:translate|convert|i18n_v1|i18n_v2|i18n_v3)$/
+abort USAGE if ARGV.size < 1
+abort "Invalid cmd #{ARGV[0]}" unless ARGV[0] =~ /^(?:translate|maps|convert|i18n_v1|i18n_v2|i18n_v3)$/
 
 
 cmd = ARGV[0].to_sym
@@ -291,6 +293,13 @@ if cmd == :translate
   else
     ARGV[1..-1].each{|n| trans.call(n,lang)}
   end
+  exit 0
+end
+
+# maps mode
+if cmd == :maps
+  load_maps(lang)
+  $stdout.puts JSON.pretty_generate($maps[:en])
   exit 0
 end
 
